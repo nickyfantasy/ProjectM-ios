@@ -8,13 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		20359CBC1B6EE6FF007BF4CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CBB1B6EE6FF007BF4CE /* AppDelegate.swift */; };
-		20359CBE1B6EE700007BF4CE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CBD1B6EE700007BF4CE /* FirstViewController.swift */; };
-		20359CC01B6EE700007BF4CE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CBF1B6EE700007BF4CE /* SecondViewController.swift */; };
 		20359CC31B6EE700007BF4CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20359CC11B6EE700007BF4CE /* Main.storyboard */; };
 		20359CC51B6EE700007BF4CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20359CC41B6EE700007BF4CE /* Assets.xcassets */; };
 		20359CC81B6EE700007BF4CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20359CC61B6EE700007BF4CE /* LaunchScreen.storyboard */; };
 		20359CD31B6EE700007BF4CE /* MickleDealsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CD21B6EE700007BF4CE /* MickleDealsTests.swift */; };
 		20359CDE1B6EE700007BF4CE /* MickleDealsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CDD1B6EE700007BF4CE /* MickleDealsUITests.swift */; };
+		20359CED1B6EE8F5007BF4CE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CEB1B6EE8F5007BF4CE /* HomeViewController.swift */; };
+		20359CEE1B6EE8F5007BF4CE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20359CEC1B6EE8F5007BF4CE /* HomeViewController.xib */; };
+		20359CF11B6EEF5C007BF4CE /* SaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CEF1B6EEF5C007BF4CE /* SaveViewController.swift */; };
+		20359CF21B6EEF5C007BF4CE /* SaveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20359CF01B6EEF5C007BF4CE /* SaveViewController.xib */; };
+		20359CF71B6EEF82007BF4CE /* MyCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CF51B6EEF82007BF4CE /* MyCouponViewController.swift */; };
+		20359CF81B6EEF82007BF4CE /* MyCouponViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20359CF61B6EEF82007BF4CE /* MyCouponViewController.xib */; };
+		20359CFB1B6EEF9C007BF4CE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CF91B6EEF9C007BF4CE /* SearchViewController.swift */; };
+		20359CFC1B6EEF9C007BF4CE /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20359CFA1B6EEF9C007BF4CE /* SearchViewController.xib */; };
+		20359CFF1B6EEFB2007BF4CE /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CFD1B6EEFB2007BF4CE /* MoreViewController.swift */; };
+		20359D001B6EEFB2007BF4CE /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20359CFE1B6EEFB2007BF4CE /* MoreViewController.xib */; };
+		20359D061B6F24F0007BF4CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359D051B6F24F0007BF4CE /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +46,6 @@
 /* Begin PBXFileReference section */
 		20359CB81B6EE6FF007BF4CE /* MickleDeals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MickleDeals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20359CBB1B6EE6FF007BF4CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		20359CBD1B6EE700007BF4CE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		20359CBF1B6EE700007BF4CE /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		20359CC21B6EE700007BF4CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20359CC41B6EE700007BF4CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20359CC71B6EE700007BF4CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +56,17 @@
 		20359CD91B6EE700007BF4CE /* MickleDealsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MickleDealsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20359CDD1B6EE700007BF4CE /* MickleDealsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MickleDealsUITests.swift; sourceTree = "<group>"; };
 		20359CDF1B6EE700007BF4CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20359CEB1B6EE8F5007BF4CE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		20359CEC1B6EE8F5007BF4CE /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		20359CEF1B6EEF5C007BF4CE /* SaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveViewController.swift; sourceTree = "<group>"; };
+		20359CF01B6EEF5C007BF4CE /* SaveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SaveViewController.xib; sourceTree = "<group>"; };
+		20359CF51B6EEF82007BF4CE /* MyCouponViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCouponViewController.swift; sourceTree = "<group>"; };
+		20359CF61B6EEF82007BF4CE /* MyCouponViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCouponViewController.xib; sourceTree = "<group>"; };
+		20359CF91B6EEF9C007BF4CE /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		20359CFA1B6EEF9C007BF4CE /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		20359CFD1B6EEFB2007BF4CE /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		20359CFE1B6EEFB2007BF4CE /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
+		20359D051B6F24F0007BF4CE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +118,21 @@
 			isa = PBXGroup;
 			children = (
 				20359CBB1B6EE6FF007BF4CE /* AppDelegate.swift */,
-				20359CBD1B6EE700007BF4CE /* FirstViewController.swift */,
-				20359CBF1B6EE700007BF4CE /* SecondViewController.swift */,
+				20359CEB1B6EE8F5007BF4CE /* HomeViewController.swift */,
+				20359CEF1B6EEF5C007BF4CE /* SaveViewController.swift */,
+				20359CF91B6EEF9C007BF4CE /* SearchViewController.swift */,
+				20359CFD1B6EEFB2007BF4CE /* MoreViewController.swift */,
+				20359CFE1B6EEFB2007BF4CE /* MoreViewController.xib */,
+				20359CFA1B6EEF9C007BF4CE /* SearchViewController.xib */,
+				20359CF51B6EEF82007BF4CE /* MyCouponViewController.swift */,
+				20359CF61B6EEF82007BF4CE /* MyCouponViewController.xib */,
+				20359CF01B6EEF5C007BF4CE /* SaveViewController.xib */,
+				20359CEC1B6EE8F5007BF4CE /* HomeViewController.xib */,
 				20359CC11B6EE700007BF4CE /* Main.storyboard */,
 				20359CC41B6EE700007BF4CE /* Assets.xcassets */,
 				20359CC61B6EE700007BF4CE /* LaunchScreen.storyboard */,
 				20359CC91B6EE700007BF4CE /* Info.plist */,
+				20359D051B6F24F0007BF4CE /* Constants.swift */,
 			);
 			path = MickleDeals;
 			sourceTree = "<group>";
@@ -232,8 +259,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				20359CC81B6EE700007BF4CE /* LaunchScreen.storyboard in Resources */,
+				20359D001B6EEFB2007BF4CE /* MoreViewController.xib in Resources */,
 				20359CC51B6EE700007BF4CE /* Assets.xcassets in Resources */,
+				20359CF81B6EEF82007BF4CE /* MyCouponViewController.xib in Resources */,
 				20359CC31B6EE700007BF4CE /* Main.storyboard in Resources */,
+				20359CEE1B6EE8F5007BF4CE /* HomeViewController.xib in Resources */,
+				20359CF21B6EEF5C007BF4CE /* SaveViewController.xib in Resources */,
+				20359CFC1B6EEF9C007BF4CE /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20359CC01B6EE700007BF4CE /* SecondViewController.swift in Sources */,
+				20359CFB1B6EEF9C007BF4CE /* SearchViewController.swift in Sources */,
+				20359CF71B6EEF82007BF4CE /* MyCouponViewController.swift in Sources */,
 				20359CBC1B6EE6FF007BF4CE /* AppDelegate.swift in Sources */,
-				20359CBE1B6EE700007BF4CE /* FirstViewController.swift in Sources */,
+				20359CFF1B6EEFB2007BF4CE /* MoreViewController.swift in Sources */,
+				20359D061B6F24F0007BF4CE /* Constants.swift in Sources */,
+				20359CF11B6EEF5C007BF4CE /* SaveViewController.swift in Sources */,
+				20359CED1B6EE8F5007BF4CE /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
