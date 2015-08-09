@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BrowseViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UIScrollViewDelegate, UICollectionViewDataSource {
     
     static let cellMargin: CGFloat = 6
     static let cellHeight: CGFloat = 70
@@ -18,11 +18,14 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     private let sectionInsets = UIEdgeInsets(top: cellMargin, left: cellMargin, bottom: cellMargin, right: cellMargin)
     //private var formatter = NSNumberFormatter()
     
+    @IBOutlet weak var collectionView: UICollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
         
         let image = UIImage(named: "full_logo.png")
         self.navigationItem.titleView = UIImageView(image: image)
@@ -52,18 +55,18 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return dataList.count
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! BrowseCouponCell
     
 //        cell.layer.cornerRadius = 8
@@ -95,7 +98,7 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     
-    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         let reusableView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "FilterHeaderView", forIndexPath: indexPath) as! FilterHeaderView
         
         return reusableView

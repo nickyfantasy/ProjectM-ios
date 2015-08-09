@@ -93,6 +93,120 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--Browse View Controller-->
+        <scene sceneID="Gbc-my-4Z8">
+            <objects>
+                <viewController id="nG2-Y8-p8G" customClass="BrowseViewController" customModule="MickleDeals" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QPu-xk-yC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="73i-0a-IgQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="79B-c8-cuL">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4N-RL-tE6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <barButtonItem title="All Categories" id="R7w-7L-cVE">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="All Locations" id="OBe-de-311">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.93725490199999995" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="536" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fEw-pa-9Ub">
+                                <rect key="frame" x="0.0" y="44" width="600" height="443"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yBF-v1-uPP">
+                                    <size key="itemSize" width="580" height="250"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BrowseCouponCell" id="mSk-Mi-2VA" customClass="BrowseCouponCell" customModule="MickleDeals">
+                                        <rect key="frame" x="10" y="10" width="580" height="250"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="580" height="250"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32G-rS-UES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="32G-rS-UES" secondAttribute="height" multiplier="150:100" id="QVs-wn-DjV"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="wdC-Aq-4M2">
+                                                    <rect key="frame" x="390" y="6" width="186" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zVc-sc-jkk">
+                                                    <rect key="frame" x="387" y="224" width="39" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ez-ZI-akR">
+                                                    <rect key="frame" x="434" y="224" width="138" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="0.93725490199999995" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="6ez-ZI-akR" firstAttribute="leading" secondItem="zVc-sc-jkk" secondAttribute="trailing" constant="4" id="G0Y-Eh-vME"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="zVc-sc-jkk" secondAttribute="bottom" id="Oss-EK-KBD"/>
+                                            <constraint firstItem="6ez-ZI-akR" firstAttribute="trailing" secondItem="mSk-Mi-2VA" secondAttribute="trailingMargin" id="RMH-Vd-WaS"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="wdC-Aq-4M2" secondAttribute="trailing" constant="-4" id="V8K-Ct-zfs"/>
+                                            <constraint firstItem="32G-rS-UES" firstAttribute="leading" secondItem="mSk-Mi-2VA" secondAttribute="leadingMargin" constant="-5" id="W87-gl-6hy"/>
+                                            <constraint firstItem="wdC-Aq-4M2" firstAttribute="leading" secondItem="32G-rS-UES" secondAttribute="trailing" constant="12" id="Z3V-5U-b1e"/>
+                                            <constraint firstAttribute="topMargin" secondItem="wdC-Aq-4M2" secondAttribute="top" constant="2" id="f4r-IR-egx"/>
+                                            <constraint firstItem="zVc-sc-jkk" firstAttribute="leading" secondItem="wdC-Aq-4M2" secondAttribute="leading" id="kVD-YZ-frf"/>
+                                            <constraint firstItem="32G-rS-UES" firstAttribute="height" secondItem="mSk-Mi-2VA" secondAttribute="height" id="ngs-Cv-ntG"/>
+                                            <constraint firstItem="6ez-ZI-akR" firstAttribute="top" secondItem="zVc-sc-jkk" secondAttribute="top" id="sFK-lm-e2e"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="couponDescription" destination="wdC-Aq-4M2" id="S6L-hx-Bag"/>
+                                            <outlet property="couponImage" destination="32G-rS-UES" id="kat-fs-wLB"/>
+                                            <outlet property="couponLocation" destination="zVc-sc-jkk" id="FgD-1m-Ans"/>
+                                            <outlet property="couponPrice" destination="6ez-ZI-akR" id="yNI-Kn-7JP"/>
+                                            <segue destination="Tnk-Nk-p0K" kind="show" id="oxb-oI-TuS"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fEw-pa-9Ub" firstAttribute="width" secondItem="79B-c8-cuL" secondAttribute="width" id="enB-SN-KYW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5jf-W4-drc">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="ic_notification" id="Tny-SP-Tg3">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Sort" id="yFb-hW-mv3">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="fEw-pa-9Ub" id="Dya-T8-kww"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t6F-Jr-mki" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1113" y="610"/>
+        </scene>
         <!--Home-->
         <scene sceneID="0qZ-29-kj1">
             <objects>
@@ -105,138 +219,12 @@
                         <color key="barTintColor" red="0.93725490196078431" green="0.42352941176470588" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Vr2-02-9K5" kind="relationship" relationship="rootViewController" id="MBd-xF-dTu"/>
+                        <segue destination="nG2-Y8-p8G" kind="relationship" relationship="rootViewController" id="qI8-D1-sM8"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kMm-FH-u2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-690" y="344"/>
-        </scene>
-        <!--Browse View Controller-->
-        <scene sceneID="Hxy-6L-T3k">
-            <objects>
-                <collectionViewController id="Vr2-02-9K5" customClass="BrowseViewController" customModule="MickleDeals" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="536" dataMode="prototypes" id="fEw-pa-9Ub">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yBF-v1-uPP">
-                            <size key="itemSize" width="580" height="250"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BrowseCouponCell" id="mSk-Mi-2VA" customClass="BrowseCouponCell" customModule="MickleDeals">
-                                <rect key="frame" x="10" y="60" width="580" height="250"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="580" height="250"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32G-rS-UES">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="32G-rS-UES" secondAttribute="height" multiplier="150:100" id="QVs-wn-DjV"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="wdC-Aq-4M2">
-                                            <rect key="frame" x="390" y="6" width="186" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zVc-sc-jkk">
-                                            <rect key="frame" x="387" y="224" width="39" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                            <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ez-ZI-akR">
-                                            <rect key="frame" x="434" y="224" width="138" height="21"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" red="0.93725490199999995" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="6ez-ZI-akR" firstAttribute="leading" secondItem="zVc-sc-jkk" secondAttribute="trailing" constant="4" id="G0Y-Eh-vME"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="zVc-sc-jkk" secondAttribute="bottom" id="Oss-EK-KBD"/>
-                                    <constraint firstItem="6ez-ZI-akR" firstAttribute="trailing" secondItem="mSk-Mi-2VA" secondAttribute="trailingMargin" id="RMH-Vd-WaS"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="wdC-Aq-4M2" secondAttribute="trailing" constant="-4" id="V8K-Ct-zfs"/>
-                                    <constraint firstItem="32G-rS-UES" firstAttribute="leading" secondItem="mSk-Mi-2VA" secondAttribute="leadingMargin" constant="-5" id="W87-gl-6hy"/>
-                                    <constraint firstItem="wdC-Aq-4M2" firstAttribute="leading" secondItem="32G-rS-UES" secondAttribute="trailing" constant="12" id="Z3V-5U-b1e"/>
-                                    <constraint firstAttribute="topMargin" secondItem="wdC-Aq-4M2" secondAttribute="top" constant="2" id="f4r-IR-egx"/>
-                                    <constraint firstItem="zVc-sc-jkk" firstAttribute="leading" secondItem="wdC-Aq-4M2" secondAttribute="leading" id="kVD-YZ-frf"/>
-                                    <constraint firstItem="32G-rS-UES" firstAttribute="height" secondItem="mSk-Mi-2VA" secondAttribute="height" id="ngs-Cv-ntG"/>
-                                    <constraint firstItem="6ez-ZI-akR" firstAttribute="top" secondItem="zVc-sc-jkk" secondAttribute="top" id="sFK-lm-e2e"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="couponDescription" destination="wdC-Aq-4M2" id="S6L-hx-Bag"/>
-                                    <outlet property="couponImage" destination="32G-rS-UES" id="kat-fs-wLB"/>
-                                    <outlet property="couponLocation" destination="zVc-sc-jkk" id="FgD-1m-Ans"/>
-                                    <outlet property="couponPrice" destination="6ez-ZI-akR" id="yNI-Kn-7JP"/>
-                                    <segue destination="Tnk-Nk-p0K" kind="show" id="oxb-oI-TuS"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FilterHeaderView" id="FpE-YI-kPD" customClass="FilterHeaderView" customModule="MickleDeals" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="959-GR-Xrg">
-                                    <rect key="frame" x="8" y="10" width="96" height="30"/>
-                                    <state key="normal" title="All Categories">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="selectCategory:" destination="FpE-YI-kPD" eventType="touchUpInside" id="P0V-Ao-jdF"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wpy-r9-Tj6">
-                                    <rect key="frame" x="504" y="10" width="88" height="30"/>
-                                    <state key="normal" title="All Locations">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="selectLocation:" destination="FpE-YI-kPD" eventType="touchUpInside" id="Pc4-7R-fi2"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" red="0.93725490199999995" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstItem="Wpy-r9-Tj6" firstAttribute="centerY" secondItem="FpE-YI-kPD" secondAttribute="centerY" id="0Gv-zn-hdO"/>
-                                <constraint firstItem="959-GR-Xrg" firstAttribute="centerY" secondItem="FpE-YI-kPD" secondAttribute="centerY" id="ZD3-U1-TYV"/>
-                                <constraint firstItem="959-GR-Xrg" firstAttribute="leading" secondItem="FpE-YI-kPD" secondAttribute="leadingMargin" id="cMb-1l-0a4"/>
-                                <constraint firstAttribute="trailingMargin" secondItem="Wpy-r9-Tj6" secondAttribute="trailing" id="mpt-tV-C6n"/>
-                            </constraints>
-                            <connections>
-                                <outlet property="categoryBtn" destination="959-GR-Xrg" id="avZ-Dd-8PW"/>
-                                <outlet property="locationBtn" destination="Wpy-r9-Tj6" id="o1u-2c-Sr4"/>
-                            </connections>
-                        </collectionReusableView>
-                        <connections>
-                            <outlet property="dataSource" destination="Vr2-02-9K5" id="FNi-R4-cnm"/>
-                            <outlet property="delegate" destination="Vr2-02-9K5" id="PWw-qY-3Gg"/>
-                        </connections>
-                    </collectionView>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="rXJ-g1-5Jf">
-                        <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="ic_notification" id="zTS-Ko-cnV">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Sort" id="Pfm-W4-P6B">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d4Z-P5-GWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-833" y="1053"/>
         </scene>
         <!--Coupon Details Controller-->
         <scene sceneID="ENb-rS-uMd">
