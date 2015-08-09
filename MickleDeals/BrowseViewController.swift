@@ -19,6 +19,7 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
     //private var formatter = NSNumberFormatter()
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var filterToolBar: UIToolbar!
     
     
     override func viewDidLoad() {
@@ -30,6 +31,14 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
         let image = UIImage(named: "full_logo.png")
         self.navigationItem.titleView = UIImageView(image: image)
         
+        let toolbarLayer = filterToolBar.layer
+        toolbarLayer.shadowRadius = 3
+        
+        
+        
+        toolbarLayer.shadowColor = UIColor.blackColor().CGColor
+        toolbarLayer.shadowOpacity = 0.4
+        toolbarLayer.shadowOffset = CGSizeMake(0, 1)
         //formatter.numberStyle = .CurrencyStyle
         
 
@@ -75,7 +84,7 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
         cell.layer.shadowColor = UIColor.blackColor().CGColor
         cell.layer.shadowOpacity = 0.2
         cell.layer.shadowRadius = 1
-        cell.layer.shadowOffset = CGSizeMake(1, 2)
+        cell.layer.shadowOffset = CGSizeMake(1, 1.5)
         cell.clipsToBounds = false;
         
         
@@ -98,11 +107,6 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
     }
     
     
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        let reusableView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "FilterHeaderView", forIndexPath: indexPath) as! FilterHeaderView
-        
-        return reusableView
-    }
     
     // MARK: UICollectionViewDelegateFlowLayout
     

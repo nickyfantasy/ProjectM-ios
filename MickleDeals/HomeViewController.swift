@@ -12,8 +12,12 @@ class HomeViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //this is to remove 1px line under navbar
+        self.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationBar.shadowImage = UIImage()
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {

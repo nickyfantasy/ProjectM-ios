@@ -27,8 +27,6 @@
 		20359D0A1B6F4CFE007BF4CE /* CouponInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359D091B6F4CFE007BF4CE /* CouponInfo.swift */; };
 		20359D0C1B6F4E3C007BF4CE /* DataListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359D0B1B6F4E3C007BF4CE /* DataListModel.swift */; };
 		20359D0E1B6F4F38007BF4CE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359D0D1B6F4F38007BF4CE /* Utils.swift */; };
-		20E78FD71B76A459005DA659 /* FilterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E78FD51B76A459005DA659 /* FilterHeaderView.swift */; };
-		20E78FD81B76A459005DA659 /* FilterHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E78FD61B76A459005DA659 /* FilterHeaderView.xib */; };
 		20E78FDB1B76ABD2005DA659 /* CouponDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E78FD91B76ABD2005DA659 /* CouponDetailsController.swift */; };
 		20E78FDC1B76ABD2005DA659 /* CouponDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E78FDA1B76ABD2005DA659 /* CouponDetailsController.xib */; };
 		20EE87BC1B708B0A005CA45B /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EE87BA1B708B0A005CA45B /* BrowseViewController.swift */; };
@@ -81,8 +79,6 @@
 		20359D091B6F4CFE007BF4CE /* CouponInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponInfo.swift; sourceTree = "<group>"; };
 		20359D0B1B6F4E3C007BF4CE /* DataListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataListModel.swift; sourceTree = "<group>"; };
 		20359D0D1B6F4F38007BF4CE /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		20E78FD51B76A459005DA659 /* FilterHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterHeaderView.swift; sourceTree = "<group>"; };
-		20E78FD61B76A459005DA659 /* FilterHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterHeaderView.xib; sourceTree = "<group>"; };
 		20E78FD91B76ABD2005DA659 /* CouponDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDetailsController.swift; sourceTree = "<group>"; };
 		20E78FDA1B76ABD2005DA659 /* CouponDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouponDetailsController.xib; sourceTree = "<group>"; };
 		20EE87BA1B708B0A005CA45B /* BrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
@@ -155,8 +151,6 @@
 				20359CC11B6EE700007BF4CE /* Main.storyboard */,
 				20E78FD91B76ABD2005DA659 /* CouponDetailsController.swift */,
 				20E78FDA1B76ABD2005DA659 /* CouponDetailsController.xib */,
-				20E78FD51B76A459005DA659 /* FilterHeaderView.swift */,
-				20E78FD61B76A459005DA659 /* FilterHeaderView.xib */,
 				20EE87BE1B744761005CA45B /* BrowseCouponCell.swift */,
 				20EE87BF1B744761005CA45B /* BrowseCouponCell.xib */,
 				20359CC41B6EE700007BF4CE /* Assets.xcassets */,
@@ -307,7 +301,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20E78FD81B76A459005DA659 /* FilterHeaderView.xib in Resources */,
 				20359CC81B6EE700007BF4CE /* LaunchScreen.storyboard in Resources */,
 				20EE87C11B744761005CA45B /* BrowseCouponCell.xib in Resources */,
 				20EE87BD1B708B0A005CA45B /* BrowseViewController.xib in Resources */,
@@ -347,7 +340,6 @@
 				20359CF71B6EEF82007BF4CE /* MyCouponViewController.swift in Sources */,
 				20359CBC1B6EE6FF007BF4CE /* AppDelegate.swift in Sources */,
 				20EE87BC1B708B0A005CA45B /* BrowseViewController.swift in Sources */,
-				20E78FD71B76A459005DA659 /* FilterHeaderView.swift in Sources */,
 				20359D0A1B6F4CFE007BF4CE /* CouponInfo.swift in Sources */,
 				20359CFF1B6EEFB2007BF4CE /* MoreViewController.swift in Sources */,
 				20359D0E1B6F4F38007BF4CE /* Utils.swift in Sources */,
