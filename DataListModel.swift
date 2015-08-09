@@ -12,14 +12,17 @@ class DataListModel {
     
     private(set) var list = [CouponInfo]()
     
-    class var sharedDataList : DataListModel {
+    
+    
+    class var instance : DataListModel {
         struct Singleton {
-            static let instance = DataListModel()
+            static let sharedInstance = DataListModel()
         }
-        return Singleton.instance
+        return Singleton.sharedInstance
     }
     
     init() {
+        
         var coupon1 = CouponInfo(id: 1)
         coupon1.description = "Free Strawberry Pudding when spent more than $30"
         coupon1.descriptionCh = "消費滿$30即獲免費草莓布丁1分"

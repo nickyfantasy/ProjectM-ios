@@ -13,9 +13,10 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     static let cellMargin: CGFloat = 6
     static let cellHeight: CGFloat = 70
     
-    private var dataList = DataListModel.sharedDataList.list
+    private var dataList = DataListModel.instance.list
     private let reuseIdentifier = "BrowseCouponCell"
     private let sectionInsets = UIEdgeInsets(top: cellMargin, left: cellMargin, bottom: cellMargin, right: cellMargin)
+    //private var formatter = NSNumberFormatter()
     
     
     
@@ -26,6 +27,7 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
         let image = UIImage(named: "full_logo.png")
         self.navigationItem.titleView = UIImageView(image: image)
         
+        //formatter.numberStyle = .CurrencyStyle
         
 
         // Uncomment the following line to preserve selection between presentations
@@ -64,6 +66,17 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! BrowseCouponCell
     
+//        cell.layer.cornerRadius = 8
+//        cell.layer.borderColor = UIColor(red:0.8, green:0.8, blue:0.8, alpha:1.0).CGColor
+//        cell.layer.borderWidth = 0.4
+        cell.layer.shadowColor = UIColor.blackColor().CGColor
+        cell.layer.shadowOpacity = 0.2
+        cell.layer.shadowRadius = 1
+        cell.layer.shadowOffset = CGSizeMake(1, 2)
+        cell.clipsToBounds = false;
+        
+        
+        
         cell.backgroundColor = UIColor.whiteColor()
         // Configure the cell
         
@@ -74,9 +87,18 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
         cell.couponImage.image = couponImage
         cell.couponDescription.text = couponInfo.description
         cell.couponLocation.text = couponInfo.storeName
-        cell.couponPrice.text = "$" + String(couponInfo.price)
+        
+        
+        cell.couponPrice.text = "$" + String(format: "%g", couponInfo.price)
     
         return cell
+    }
+    
+    
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        let reusableView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "FilterHeaderView", forIndexPath: indexPath) as! FilterHeaderView
+        
+        return reusableView
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
@@ -99,6 +121,13 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         return BrowseViewController.cellMargin
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let indexPath = collectionView?.indexPathForCell(sender as! UICollectionViewCell)!
+        let detailsVC = segue.destinationViewController as! CouponDetailsController
+        
+        detailsVC.couponInfo = dataList[indexPath!.row]
     }
 
     // MARK: UICollectionViewDelegate

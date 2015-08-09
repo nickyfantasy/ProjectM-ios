@@ -11,18 +11,18 @@ import Foundation
 struct CouponInfo {
     
     let id: Int
-    var description = "" //set all string to empty string so that do not need to implement in init()
-    var descriptionCh = ""
-    var storeName = ""
-    var storeNameCh = ""
+    var description: String! 
+    var descriptionCh: String!
+    var storeName: String!
+    var storeNameCh: String!
     var price = Float(0)
-    var address = ""
-    var addressShort = ""
+    var address: String!
+    var addressShort: String!
     
     
     //temp
-    var imageStr = ""
-    var imageSmallStr = ""
+    var imageStr: String!
+    var imageSmallStr: String!
     
     init(id: Int) {
         self.id = id
