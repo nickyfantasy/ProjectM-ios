@@ -37,7 +37,7 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
         
         
         toolbarLayer.shadowColor = UIColor.blackColor().CGColor
-        toolbarLayer.shadowOpacity = 0.4
+        toolbarLayer.shadowOpacity = 0.6
         toolbarLayer.shadowOffset = CGSizeMake(0, 1)
         //formatter.numberStyle = .CurrencyStyle
         
@@ -78,15 +78,15 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! BrowseCouponCell
     
-//        cell.layer.cornerRadius = 8
-//        cell.layer.borderColor = UIColor(red:0.8, green:0.8, blue:0.8, alpha:1.0).CGColor
-//        cell.layer.borderWidth = 0.4
-        cell.layer.shadowColor = UIColor.blackColor().CGColor
-        cell.layer.shadowOpacity = 0.2
-        cell.layer.shadowRadius = 1
-        cell.layer.shadowOffset = CGSizeMake(1, 1.5)
+        let cLayer = cell.layer;
+        cLayer.shadowColor = UIColor.blackColor().CGColor
+        cLayer.shadowOpacity = 0.2
+        cLayer.shadowRadius = 1
+        cLayer.shadowOffset = CGSizeMake(1, 1.5)
+        cLayer.shadowPath = UIBezierPath(rect: cell.bounds).CGPath
+        cLayer.shouldRasterize = true
+        cLayer.rasterizationScale = UIScreen.mainScreen().scale
         cell.clipsToBounds = false;
-        
         
         
         cell.backgroundColor = UIColor.whiteColor()
