@@ -27,6 +27,7 @@
 		20359D0A1B6F4CFE007BF4CE /* CouponInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359D091B6F4CFE007BF4CE /* CouponInfo.swift */; };
 		20359D0C1B6F4E3C007BF4CE /* DataListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359D0B1B6F4E3C007BF4CE /* DataListModel.swift */; };
 		20359D0E1B6F4F38007BF4CE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359D0D1B6F4F38007BF4CE /* Utils.swift */; };
+		207D00C11B782FEC000359CA /* MDConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D00C01B782FEC000359CA /* MDConfig.swift */; };
 		20E78FDB1B76ABD2005DA659 /* CouponDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E78FD91B76ABD2005DA659 /* CouponDetailsController.swift */; };
 		20E78FDC1B76ABD2005DA659 /* CouponDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E78FDA1B76ABD2005DA659 /* CouponDetailsController.xib */; };
 		20EE87BC1B708B0A005CA45B /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EE87BA1B708B0A005CA45B /* BrowseViewController.swift */; };
@@ -79,6 +80,7 @@
 		20359D091B6F4CFE007BF4CE /* CouponInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponInfo.swift; sourceTree = "<group>"; };
 		20359D0B1B6F4E3C007BF4CE /* DataListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataListModel.swift; sourceTree = "<group>"; };
 		20359D0D1B6F4F38007BF4CE /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		207D00C01B782FEC000359CA /* MDConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDConfig.swift; sourceTree = "<group>"; };
 		20E78FD91B76ABD2005DA659 /* CouponDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDetailsController.swift; sourceTree = "<group>"; };
 		20E78FDA1B76ABD2005DA659 /* CouponDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouponDetailsController.xib; sourceTree = "<group>"; };
 		20EE87BA1B708B0A005CA45B /* BrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				20359D051B6F24F0007BF4CE /* Constants.swift */,
 				20359D0D1B6F4F38007BF4CE /* Utils.swift */,
+				207D00C01B782FEC000359CA /* MDConfig.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			files = (
 				20359CFB1B6EEF9C007BF4CE /* SearchViewController.swift in Sources */,
 				20359CF71B6EEF82007BF4CE /* MyCouponViewController.swift in Sources */,
+				207D00C11B782FEC000359CA /* MDConfig.swift in Sources */,
 				20359CBC1B6EE6FF007BF4CE /* AppDelegate.swift in Sources */,
 				20EE87BC1B708B0A005CA45B /* BrowseViewController.swift in Sources */,
 				20359D0A1B6F4CFE007BF4CE /* CouponInfo.swift in Sources */,
@@ -495,6 +499,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mickledeals.MickleDeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -507,6 +512,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mickledeals.MickleDeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

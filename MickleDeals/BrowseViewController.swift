@@ -21,7 +21,14 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var filterToolBar: UIToolbar!
     
+    @IBOutlet weak var categoryBtn: UIButton!
+    @IBOutlet weak var locationBtn: UIButton!
     
+    @IBAction func selectFilter(sender: UIButton) {
+        categoryBtn.setTitle("XXX", forState:UIControlState.Normal)
+        
+        categoryBtn.sizeToFit()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,14 +38,9 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
         let image = UIImage(named: "full_logo.png")
         self.navigationItem.titleView = UIImageView(image: image)
         
-        let toolbarLayer = filterToolBar.layer
-        toolbarLayer.shadowRadius = 3
-        
-        
-        
-        toolbarLayer.shadowColor = UIColor.blackColor().CGColor
-        toolbarLayer.shadowOpacity = 0.6
-        toolbarLayer.shadowOffset = CGSizeMake(0, 1)
+        Utils.addBarShadow(filterToolBar)
+        Utils.adjustInsetWithArrow(categoryBtn)
+        Utils.adjustInsetWithArrow(locationBtn)
         //formatter.numberStyle = .CurrencyStyle
         
 
@@ -78,18 +80,7 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! BrowseCouponCell
     
-        let cLayer = cell.layer;
-        cLayer.shadowColor = UIColor.blackColor().CGColor
-        cLayer.shadowOpacity = 0.2
-        cLayer.shadowRadius = 1
-        cLayer.shadowOffset = CGSizeMake(1, 1.5)
-        cLayer.shadowPath = UIBezierPath(rect: cell.bounds).CGPath
-        cLayer.shouldRasterize = true
-        cLayer.rasterizationScale = UIScreen.mainScreen().scale
-        cell.clipsToBounds = false;
-        
-        
-        cell.backgroundColor = UIColor.whiteColor()
+        Utils.addCardShadow(cell)
         // Configure the cell
         
         let couponInfo = dataList[indexPath.row]

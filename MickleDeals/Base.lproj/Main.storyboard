@@ -174,12 +174,29 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <barButtonItem title="All Categories" id="O1u-Ac-3Uu">
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <barButtonItem title="All Categories" style="plain" id="Tzg-BJ-gaQ">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kvg-AD-LcS">
+                                            <rect key="frame" x="0.0" y="6" width="107" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <state key="normal" title="All Categories" backgroundImage="ic_arrow_down">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="selectFilter:" destination="nG2-Y8-p8G" eventType="touchUpInside" id="05X-Eu-Hap"/>
+                                            </connections>
+                                        </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="71g-n8-K9i"/>
-                                    <barButtonItem title="All Locations" id="gNX-i3-CyI">
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <barButtonItem style="plain" id="LNd-Bk-IcJ">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" id="Fmu-ZM-AbI">
+                                            <rect key="frame" x="554" y="7" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <state key="normal" title="All Locations" backgroundImage="ic_arrow_down">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
                                     </barButtonItem>
                                 </items>
                                 <color key="barTintColor" red="0.93725490199999995" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -204,8 +221,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="categoryBtn" destination="kvg-AD-LcS" id="VjD-2Z-qkG"/>
                         <outlet property="collectionView" destination="fEw-pa-9Ub" id="Dya-T8-kww"/>
                         <outlet property="filterToolBar" destination="m4N-RL-tE6" id="Mav-Xr-UMp"/>
+                        <outlet property="locationBtn" destination="Fmu-ZM-AbI" id="koF-ZI-cEe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6F-Jr-mki" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -290,6 +309,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_arrow_down" width="17" height="30"/>
         <image name="ic_home" width="25" height="25"/>
         <image name="ic_home_filled" width="25" height="25"/>
         <image name="ic_notification" width="22" height="22"/>
