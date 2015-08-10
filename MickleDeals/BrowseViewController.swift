@@ -8,7 +8,8 @@
 
 import UIKit
 
-class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UIScrollViewDelegate, UICollectionViewDataSource {
+
+class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UIScrollViewDelegate, UICollectionViewDataSource, UIPopoverControllerDelegate {
     
     static let cellMargin: CGFloat = 6
     static let cellHeight: CGFloat = 70
@@ -18,17 +19,53 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
     private let sectionInsets = UIEdgeInsets(top: cellMargin, left: cellMargin, bottom: cellMargin, right: cellMargin)
     //private var formatter = NSNumberFormatter()
     
+    private var filterPopoverController: UIPopoverController?
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var filterToolBar: UIToolbar!
     
     @IBOutlet weak var categoryBtn: UIButton!
     @IBOutlet weak var locationBtn: UIButton!
     
+    
+    
     @IBAction func selectFilter(sender: UIButton) {
-        categoryBtn.setTitle("XXX", forState:UIControlState.Normal)
         
-        categoryBtn.sizeToFit()
+        toggleFilterPopover(sender, popupType: sender.tag)
     }
+    
+    func toggleFilterPopover(inView: UIView, popupType: Int) {
+        if filterPopoverController == nil {
+            let filterListController = FilterListController()
+            filterListController.browseViewController = self
+            filterPopoverController = UIPopoverController(contentViewController: filterListController)
+            filterPopoverController?.presentPopoverFromRect(inView.frame, inView: inView, permittedArrowDirections: .Any, animated: true)
+            
+        } else {
+            filterPopoverController?.dismissPopoverAnimated(true)
+            filterPopoverController = nil
+        }
+    }
+    
+    func popoverControllerDidDismissPopover(popoverController: UIPopoverController) {
+        if popoverController == filterPopoverController {
+            filterPopoverController = nil
+        }
+    }
+    
+    func onFilterSelected(selectedStr: String, popupType: Int) {
+        if filterPopoverController != nil {
+            filterPopoverController?.dismissPopoverAnimated(true)
+            filterPopoverController = nil
+        }
+        
+        sendRequest()
+    }
+    
+    func sendRequest() {
+        //send request
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,26 +91,15 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return dataList.count
     }
 
