@@ -92,6 +92,90 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--Notification List Controller-->
+        <scene sceneID="74a-7n-pt7">
+            <objects>
+                <viewController id="wBO-bc-WkN" customClass="NotificationListController" customModule="MickleDeals" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aNf-9O-Lyp"/>
+                        <viewControllerLayoutGuide type="bottom" id="ry7-Yq-4CU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rte-Mq-Uc2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aZb-bT-Duk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1563" y="1255"/>
+        </scene>
+        <!--Filter List Controller-->
+        <scene sceneID="wow-4B-6wg">
+            <objects>
+                <viewController id="oQy-PH-gtJ" customClass="FilterListController" customModule="MickleDeals" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zXH-3j-tsO"/>
+                        <viewControllerLayoutGuide type="bottom" id="kvo-GU-wVd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3w7-ma-tXl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcy-h0-vBM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="heI-m1-Xfo"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.93725490199999995" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Title" id="7jt-eO-wAs">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="ySf-PV-qDY">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="dismissBtn:" destination="oQy-PH-gtJ" id="eA8-pX-cX7"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="barPosition">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="99D-iM-IXW">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oQy-PH-gtJ" id="bi8-9Z-S1a"/>
+                                    <outlet property="delegate" destination="oQy-PH-gtJ" id="vWK-hS-xic"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kcy-h0-vBM" firstAttribute="width" secondItem="3w7-ma-tXl" secondAttribute="width" id="7Fe-mK-wEl"/>
+                            <constraint firstAttribute="bottom" secondItem="99D-iM-IXW" secondAttribute="bottom" id="8jz-6Z-aIg"/>
+                            <constraint firstItem="99D-iM-IXW" firstAttribute="leading" secondItem="3w7-ma-tXl" secondAttribute="leading" id="HUl-yx-lps"/>
+                            <constraint firstItem="99D-iM-IXW" firstAttribute="width" secondItem="3w7-ma-tXl" secondAttribute="width" id="JLa-78-JlI"/>
+                            <constraint firstItem="99D-iM-IXW" firstAttribute="top" secondItem="kcy-h0-vBM" secondAttribute="bottom" id="KXw-Ws-duC"/>
+                            <constraint firstItem="kcy-h0-vBM" firstAttribute="leading" secondItem="3w7-ma-tXl" secondAttribute="leading" id="L7O-r2-TQA"/>
+                            <constraint firstItem="kcy-h0-vBM" firstAttribute="top" secondItem="3w7-ma-tXl" secondAttribute="top" id="dPf-fQ-ZEf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="filterTitle" destination="7jt-eO-wAs" id="8In-Au-TtD"/>
+                        <outlet property="tableView" destination="99D-iM-IXW" id="MvL-Xy-Oed"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uhU-7C-Gag" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1712" y="271"/>
+        </scene>
         <!--Browse View Controller-->
         <scene sceneID="Gbc-my-4Z8">
             <objects>
@@ -175,7 +259,7 @@
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <barButtonItem title="All Categories" style="plain" id="Tzg-BJ-gaQ">
-                                        <button key="customView" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kvg-AD-LcS">
+                                        <button key="customView" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kvg-AD-LcS">
                                             <rect key="frame" x="0.0" y="6" width="107" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -183,7 +267,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="selectFilter:" destination="nG2-Y8-p8G" eventType="touchUpInside" id="05X-Eu-Hap"/>
+                                                <segue destination="oQy-PH-gtJ" kind="presentation" id="X8h-Ez-8Wd"/>
                                             </connections>
                                         </button>
                                         <connections>
@@ -192,7 +276,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="71g-n8-K9i"/>
                                     <barButtonItem style="plain" id="LNd-Bk-IcJ">
-                                        <button key="customView" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" id="Fmu-ZM-AbI">
+                                        <button key="customView" opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" id="Fmu-ZM-AbI">
                                             <rect key="frame" x="554" y="7" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -216,11 +300,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="5jf-W4-drc">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="ic_notification" id="Tny-SP-Tg3">
+                        <barButtonItem key="leftBarButtonItem" tag="1" image="ic_notification" id="Tny-SP-Tg3">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="notificationClick:" destination="nG2-Y8-p8G" id="36a-ws-DUz"/>
+                                <segue destination="oQy-PH-gtJ" kind="presentation" id="1hZ-ox-LJx"/>
+                            </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" tag="1" title="Sort" id="yFb-hW-mv3">
+                        <barButtonItem key="rightBarButtonItem" tag="2" title="Sort" id="yFb-hW-mv3">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="oQy-PH-gtJ" kind="presentation" id="MS4-fA-Nw4"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -228,6 +319,8 @@
                         <outlet property="collectionView" destination="fEw-pa-9Ub" id="Dya-T8-kww"/>
                         <outlet property="filterToolBar" destination="m4N-RL-tE6" id="Mav-Xr-UMp"/>
                         <outlet property="locationBtn" destination="Fmu-ZM-AbI" id="koF-ZI-cEe"/>
+                        <outlet property="notificationBtn" destination="Tny-SP-Tg3" id="bdJ-38-HNd"/>
+                        <outlet property="sortBtn" destination="yFb-hW-mv3" id="dNc-FX-hIV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6F-Jr-mki" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -319,5 +412,8 @@
         <image name="ic_pricetag" width="25" height="25"/>
         <image name="ic_pricetag_filled" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="X8h-Ez-8Wd"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.93725490199999995" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

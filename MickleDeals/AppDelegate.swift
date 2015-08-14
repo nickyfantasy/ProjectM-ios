@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UITabBar.appearance().tintColor = Constants.primaryColor
         window?.tintColor = Constants.primaryColor
+        
+        application.statusBarStyle = UIStatusBarStyle.LightContent
         return true
     }
 

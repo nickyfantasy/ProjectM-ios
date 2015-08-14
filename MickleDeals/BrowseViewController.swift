@@ -26,13 +26,25 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
     
     @IBOutlet weak var categoryBtn: UIButton!
     @IBOutlet weak var locationBtn: UIButton!
+    @IBOutlet weak var sortBtn: UIBarButtonItem!
+    @IBOutlet weak var notificationBtn: UIBarButtonItem!
     
     
+//    @IBAction func notificationClick(sender: UIBarButtonItem) {
+//        
+//        
+//        
+////        let filterListController = FilterListController()
+////        presentViewController(filterListController, animated: true, completion: nil)
+//    }
+//    
+//    @IBAction func selectFilter(sender: UIButton) {
+//        
+//        
+//        
+////        toggleFilterPopover(sender, popupType: sender.tag)
+//    }
     
-    @IBAction func selectFilter(sender: UIButton) {
-        
-        toggleFilterPopover(sender, popupType: sender.tag)
-    }
     
     func toggleFilterPopover(inView: UIView, popupType: Int) {
         if filterPopoverController == nil {
@@ -148,10 +160,32 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let indexPath = collectionView?.indexPathForCell(sender as! UICollectionViewCell)!
-        let detailsVC = segue.destinationViewController as! CouponDetailsController
         
-        detailsVC.couponInfo = dataList[indexPath!.row]
+        if let cell = sender as? UICollectionViewCell {
+            
+            let indexPath = collectionView?.indexPathForCell(cell)
+            let detailsVC = segue.destinationViewController as! CouponDetailsController
+            
+            detailsVC.couponInfo = dataList[indexPath!.row]
+        } else {
+            
+            let filterListVC = segue.destinationViewController as! FilterListController
+            let filterTitle: String
+            switch sender!.tag {
+                case 1:
+                filterTitle = "Notification"
+            case 2:
+                filterTitle = "Sort"
+            case 3:
+                filterTitle = "Select Category"
+            case 4:
+                filterTitle = "Select Location"
+            default:
+                filterTitle = ""
+            }
+            filterListVC.title = filterTitle
+        }
+        
     }
 
     // MARK: UICollectionViewDelegate

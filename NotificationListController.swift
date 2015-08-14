@@ -1,31 +1,21 @@
 //
-//  FilterListController.swift
+//  NotificationListController.swift
 //  MickleDeals
 //
-//  Created by Chan, Nicky on 8/9/15.
+//  Created by Chan, Nicky on 8/11/15.
 //  Copyright © 2015 Chan, Nicky. All rights reserved.
 //
 
 import UIKit
 
-class FilterListController: UIViewController, UITableViewDelegate, UIScrollViewDelegate, UITableViewDataSource {
-    
-    weak var browseViewController: BrowseViewController? = nil
-    private let categoryList: [String] = ["Food and Drinks", "Things to Do", "Beauty and Spa"]
-    
-    @IBOutlet weak var filterTitle: UINavigationItem!
-    
-    @IBOutlet weak var tableView: UITableView!
-    
-    @IBAction func dismissBtn(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+class NotificationListController: UITableViewController {
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        filterTitle.title = self.title
-        
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "FilterCell")
-        
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
@@ -37,23 +27,25 @@ class FilterListController: UIViewController, UITableViewDelegate, UIScrollViewD
 
     // MARK: - Table view data source
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryList.count
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 0
     }
 
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("FilterCell", forIndexPath: indexPath)
+    /*
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
-        cell.textLabel!.text = categoryList[indexPath.row]
+        // Configure the cell...
 
         return cell
     }
-
+    */
 
     /*
     // Override to support conditional editing of the table view.

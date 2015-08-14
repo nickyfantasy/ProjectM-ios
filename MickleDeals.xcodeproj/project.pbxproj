@@ -14,26 +14,19 @@
 		20359CD31B6EE700007BF4CE /* MickleDealsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CD21B6EE700007BF4CE /* MickleDealsTests.swift */; };
 		20359CDE1B6EE700007BF4CE /* MickleDealsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CDD1B6EE700007BF4CE /* MickleDealsUITests.swift */; };
 		20359CED1B6EE8F5007BF4CE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CEB1B6EE8F5007BF4CE /* HomeViewController.swift */; };
-		20359CEE1B6EE8F5007BF4CE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20359CEC1B6EE8F5007BF4CE /* HomeViewController.xib */; };
 		20359CF11B6EEF5C007BF4CE /* SaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CEF1B6EEF5C007BF4CE /* SaveViewController.swift */; };
-		20359CF21B6EEF5C007BF4CE /* SaveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20359CF01B6EEF5C007BF4CE /* SaveViewController.xib */; };
 		20359CF71B6EEF82007BF4CE /* MyCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CF51B6EEF82007BF4CE /* MyCouponViewController.swift */; };
-		20359CF81B6EEF82007BF4CE /* MyCouponViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20359CF61B6EEF82007BF4CE /* MyCouponViewController.xib */; };
 		20359CFB1B6EEF9C007BF4CE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CF91B6EEF9C007BF4CE /* SearchViewController.swift */; };
-		20359CFC1B6EEF9C007BF4CE /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20359CFA1B6EEF9C007BF4CE /* SearchViewController.xib */; };
 		20359CFF1B6EEFB2007BF4CE /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359CFD1B6EEFB2007BF4CE /* MoreViewController.swift */; };
-		20359D001B6EEFB2007BF4CE /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20359CFE1B6EEFB2007BF4CE /* MoreViewController.xib */; };
 		20359D061B6F24F0007BF4CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359D051B6F24F0007BF4CE /* Constants.swift */; };
 		20359D0A1B6F4CFE007BF4CE /* CouponInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359D091B6F4CFE007BF4CE /* CouponInfo.swift */; };
 		20359D0C1B6F4E3C007BF4CE /* DataListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359D0B1B6F4E3C007BF4CE /* DataListModel.swift */; };
 		20359D0E1B6F4F38007BF4CE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359D0D1B6F4F38007BF4CE /* Utils.swift */; };
 		20424B0B1B78753E007DB15C /* FilterListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20424B091B78753E007DB15C /* FilterListController.swift */; };
-		20424B0C1B78753E007DB15C /* FilterListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20424B0A1B78753E007DB15C /* FilterListController.xib */; };
+		20424B0F1B79E137007DB15C /* NotificationListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20424B0D1B79E137007DB15C /* NotificationListController.swift */; };
 		207D00C11B782FEC000359CA /* MDConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D00C01B782FEC000359CA /* MDConfig.swift */; };
 		20E78FDB1B76ABD2005DA659 /* CouponDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E78FD91B76ABD2005DA659 /* CouponDetailsController.swift */; };
-		20E78FDC1B76ABD2005DA659 /* CouponDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E78FDA1B76ABD2005DA659 /* CouponDetailsController.xib */; };
 		20EE87BC1B708B0A005CA45B /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EE87BA1B708B0A005CA45B /* BrowseViewController.swift */; };
-		20EE87BD1B708B0A005CA45B /* BrowseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20EE87BB1B708B0A005CA45B /* BrowseViewController.xib */; };
 		20EE87C01B744761005CA45B /* BrowseCouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EE87BE1B744761005CA45B /* BrowseCouponCell.swift */; };
 		20EE87C11B744761005CA45B /* BrowseCouponCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20EE87BF1B744761005CA45B /* BrowseCouponCell.xib */; };
 /* End PBXBuildFile section */
@@ -69,26 +62,19 @@
 		20359CDD1B6EE700007BF4CE /* MickleDealsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MickleDealsUITests.swift; sourceTree = "<group>"; };
 		20359CDF1B6EE700007BF4CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20359CEB1B6EE8F5007BF4CE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		20359CEC1B6EE8F5007BF4CE /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		20359CEF1B6EEF5C007BF4CE /* SaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveViewController.swift; sourceTree = "<group>"; };
-		20359CF01B6EEF5C007BF4CE /* SaveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SaveViewController.xib; sourceTree = "<group>"; };
 		20359CF51B6EEF82007BF4CE /* MyCouponViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCouponViewController.swift; sourceTree = "<group>"; };
-		20359CF61B6EEF82007BF4CE /* MyCouponViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCouponViewController.xib; sourceTree = "<group>"; };
 		20359CF91B6EEF9C007BF4CE /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		20359CFA1B6EEF9C007BF4CE /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		20359CFD1B6EEFB2007BF4CE /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
-		20359CFE1B6EEFB2007BF4CE /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
 		20359D051B6F24F0007BF4CE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = MickleDeals/Constants.swift; sourceTree = "<group>"; };
 		20359D091B6F4CFE007BF4CE /* CouponInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponInfo.swift; sourceTree = "<group>"; };
 		20359D0B1B6F4E3C007BF4CE /* DataListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataListModel.swift; sourceTree = "<group>"; };
 		20359D0D1B6F4F38007BF4CE /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		20424B091B78753E007DB15C /* FilterListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListController.swift; sourceTree = "<group>"; };
-		20424B0A1B78753E007DB15C /* FilterListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterListController.xib; sourceTree = "<group>"; };
+		20424B0D1B79E137007DB15C /* NotificationListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationListController.swift; path = ../NotificationListController.swift; sourceTree = "<group>"; };
 		207D00C01B782FEC000359CA /* MDConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDConfig.swift; sourceTree = "<group>"; };
 		20E78FD91B76ABD2005DA659 /* CouponDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDetailsController.swift; sourceTree = "<group>"; };
-		20E78FDA1B76ABD2005DA659 /* CouponDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouponDetailsController.xib; sourceTree = "<group>"; };
 		20EE87BA1B708B0A005CA45B /* BrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
-		20EE87BB1B708B0A005CA45B /* BrowseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowseViewController.xib; sourceTree = "<group>"; };
 		20EE87BE1B744761005CA45B /* BrowseCouponCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseCouponCell.swift; sourceTree = "<group>"; };
 		20EE87BF1B744761005CA45B /* BrowseCouponCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowseCouponCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,20 +129,15 @@
 		20359CBA1B6EE6FF007BF4CE /* MickleDeals */ = {
 			isa = PBXGroup;
 			children = (
+				20424B0D1B79E137007DB15C /* NotificationListController.swift */,
 				20359CBB1B6EE6FF007BF4CE /* AppDelegate.swift */,
 				20359CEB1B6EE8F5007BF4CE /* HomeViewController.swift */,
 				20359CEF1B6EEF5C007BF4CE /* SaveViewController.swift */,
 				20359CF91B6EEF9C007BF4CE /* SearchViewController.swift */,
 				20359CFD1B6EEFB2007BF4CE /* MoreViewController.swift */,
-				20359CFE1B6EEFB2007BF4CE /* MoreViewController.xib */,
-				20359CFA1B6EEF9C007BF4CE /* SearchViewController.xib */,
 				20359CF51B6EEF82007BF4CE /* MyCouponViewController.swift */,
-				20359CF61B6EEF82007BF4CE /* MyCouponViewController.xib */,
-				20359CF01B6EEF5C007BF4CE /* SaveViewController.xib */,
-				20359CEC1B6EE8F5007BF4CE /* HomeViewController.xib */,
 				20359CC11B6EE700007BF4CE /* Main.storyboard */,
 				20E78FD91B76ABD2005DA659 /* CouponDetailsController.swift */,
-				20E78FDA1B76ABD2005DA659 /* CouponDetailsController.xib */,
 				20EE87BE1B744761005CA45B /* BrowseCouponCell.swift */,
 				20EE87BF1B744761005CA45B /* BrowseCouponCell.xib */,
 				20359CC41B6EE700007BF4CE /* Assets.xcassets */,
@@ -164,8 +145,6 @@
 				20359CC91B6EE700007BF4CE /* Info.plist */,
 				20EE87BA1B708B0A005CA45B /* BrowseViewController.swift */,
 				20424B091B78753E007DB15C /* FilterListController.swift */,
-				20424B0A1B78753E007DB15C /* FilterListController.xib */,
-				20EE87BB1B708B0A005CA45B /* BrowseViewController.xib */,
 			);
 			path = MickleDeals;
 			sourceTree = "<group>";
@@ -312,16 +291,8 @@
 			files = (
 				20359CC81B6EE700007BF4CE /* LaunchScreen.storyboard in Resources */,
 				20EE87C11B744761005CA45B /* BrowseCouponCell.xib in Resources */,
-				20EE87BD1B708B0A005CA45B /* BrowseViewController.xib in Resources */,
-				20359D001B6EEFB2007BF4CE /* MoreViewController.xib in Resources */,
 				20359CC51B6EE700007BF4CE /* Assets.xcassets in Resources */,
-				20E78FDC1B76ABD2005DA659 /* CouponDetailsController.xib in Resources */,
-				20359CF81B6EEF82007BF4CE /* MyCouponViewController.xib in Resources */,
-				20424B0C1B78753E007DB15C /* FilterListController.xib in Resources */,
 				20359CC31B6EE700007BF4CE /* Main.storyboard in Resources */,
-				20359CEE1B6EE8F5007BF4CE /* HomeViewController.xib in Resources */,
-				20359CF21B6EEF5C007BF4CE /* SaveViewController.xib in Resources */,
-				20359CFC1B6EEF9C007BF4CE /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +321,7 @@
 				20359CF71B6EEF82007BF4CE /* MyCouponViewController.swift in Sources */,
 				207D00C11B782FEC000359CA /* MDConfig.swift in Sources */,
 				20359CBC1B6EE6FF007BF4CE /* AppDelegate.swift in Sources */,
+				20424B0F1B79E137007DB15C /* NotificationListController.swift in Sources */,
 				20EE87BC1B708B0A005CA45B /* BrowseViewController.swift in Sources */,
 				20359D0A1B6F4CFE007BF4CE /* CouponInfo.swift in Sources */,
 				20359CFF1B6EEFB2007BF4CE /* MoreViewController.swift in Sources */,
@@ -503,7 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MickleDeals/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mickledeals.MickleDeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,7 +488,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MickleDeals/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mickledeals.MickleDeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
