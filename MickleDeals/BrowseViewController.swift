@@ -11,6 +11,13 @@ import UIKit
 
 class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UIScrollViewDelegate, UICollectionViewDataSource, UIPopoverControllerDelegate {
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var filterToolBar: UIToolbar!
+    
+    @IBOutlet weak var categoryBtn: UIButton!
+    @IBOutlet weak var locationBtn: UIButton!
+    
+    @IBOutlet weak var locationBarBtn: UIBarButtonItem!
     static let cellMargin: CGFloat = 6
     static let cellHeight: CGFloat = 70
     
@@ -21,13 +28,9 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
     
     private var filterPopoverController: UIPopoverController?
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var filterToolBar: UIToolbar!
-    
-    @IBOutlet weak var categoryBtn: UIButton!
-    @IBOutlet weak var locationBtn: UIButton!
-    @IBOutlet weak var sortBtn: UIBarButtonItem!
-    @IBOutlet weak var notificationBtn: UIBarButtonItem!
+    private var categoryType = 0
+    private var locationType = 0
+    private var sortType = 0
     
     
 //    @IBAction func notificationClick(sender: UIBarButtonItem) {
@@ -44,6 +47,8 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
 //        
 ////        toggleFilterPopover(sender, popupType: sender.tag)
 //    }
+    
+    
     
     
     func toggleFilterPopover(inView: UIView, popupType: Int) {
@@ -65,10 +70,25 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
         }
     }
     
-    func onFilterSelected(selectedStr: String, popupType: Int) {
-        if filterPopoverController != nil {
-            filterPopoverController?.dismissPopoverAnimated(true)
-            filterPopoverController = nil
+    func onFilterSelected(var selectedStr: String, filterSelectedRow: Int, filterTag: Int) {
+//        if filterPopoverController != nil {
+//            filterPopoverController?.dismissPopoverAnimated(true)
+//            filterPopoverController = nil
+//        }
+        
+        if filterTag == 2 {
+            sortType = filterSelectedRow
+        } else if filterTag == 3 {
+            categoryBtn.setTitle(selectedStr, forState: .Normal)
+            categoryBtn.sizeToFit()
+            categoryType = filterSelectedRow
+        } else if filterTag == 4 {
+            if Utils.isSmallDeviceWidth() && selectedStr == "South San Francisco" {
+                selectedStr = "South SF"
+            }
+            locationBtn.setTitle(selectedStr, forState: .Normal)
+            locationBtn.sizeToFit()
+            locationType = filterSelectedRow
         }
         
         sendRequest()
@@ -170,20 +190,38 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
         } else {
             
             let filterListVC = segue.destinationViewController as! FilterListController
+            filterListVC.browseViewController = self
             let filterTitle: String
+            let filterList: [String]
+            let selectedRow: Int
             switch sender!.tag {
                 case 1:
                 filterTitle = "Notification"
+                filterList = []
+                selectedRow = 0
             case 2:
                 filterTitle = "Sort"
+                filterList = Constants.sortList
+                selectedRow = sortType
             case 3:
                 filterTitle = "Select Category"
+                filterList = Constants.categoryList
+                selectedRow = categoryType
             case 4:
                 filterTitle = "Select Location"
+                filterList = Constants.locationList
+                selectedRow = locationType
             default:
                 filterTitle = ""
+                filterList = []
+                selectedRow = 0
             }
             filterListVC.title = filterTitle
+            filterListVC.selectedRow = selectedRow
+            filterListVC.filterListData = filterList
+            filterListVC.tagFromSender = sender!.tag
+            
+            
         }
         
     }

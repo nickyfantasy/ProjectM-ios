@@ -15,11 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        MDConfig.loadConfig()
+        
         // Override point for customization after application launch.
         UITabBar.appearance().tintColor = Constants.primaryColor
         window?.tintColor = Constants.primaryColor
         
         application.statusBarStyle = UIStatusBarStyle.LightContent
+        
+        
         return true
     }
 

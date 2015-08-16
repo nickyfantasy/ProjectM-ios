@@ -42,4 +42,9 @@ class Utils {
         container.backgroundColor = UIColor.whiteColor()
     }
     
+    static func isSmallDeviceWidth() -> Bool{
+        return MDConfig.deviceWidth <= 350
+    }
+    
+    
 }

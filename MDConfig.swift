@@ -7,14 +7,27 @@
 //
 
 import Foundation
+import UIKit
 
 class MDConfig {
     
-    var isChineseSettings = false
+    static var isChineseSettings = false
+    static var isIos8Above = false
+    static var deviceWidth: CGFloat = 0
+    static var deviceHeight: CGFloat = 0
     
-    func loadSettings() {
+    static func loadConfig() {
         let defaults = NSUserDefaults.standardUserDefaults()
         isChineseSettings = (defaults.objectForKey("isChinese") as? Bool) ?? false
+        
+        if #available(iOS 8.0, *) {
+            isIos8Above = NSProcessInfo().isOperatingSystemAtLeastVersion(NSOperatingSystemVersion(majorVersion: 8, minorVersion: 0, patchVersion: 0))
+        } else {
+            isIos8Above = false
+        }
+        
+        deviceWidth = UIScreen.mainScreen().applicationFrame.width
+        deviceHeight = UIScreen.mainScreen().applicationFrame.height
     }
     
 }
