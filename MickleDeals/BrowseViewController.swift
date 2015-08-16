@@ -151,6 +151,7 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
         
         
         cell.couponPrice.text = "$" + String(format: "%g", couponInfo.price)
+        
     
         return cell
     }
@@ -224,6 +225,17 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
             
         }
         
+    }
+    
+    func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
+        
+        collectionView.cellForItemAtIndexPath(indexPath)?.contentView.backgroundColor = Constants.highlightCellColor
+        
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
+        collectionView.cellForItemAtIndexPath(indexPath)?.contentView.backgroundColor = UIColor.whiteColor()
     }
 
     // MARK: UICollectionViewDelegate

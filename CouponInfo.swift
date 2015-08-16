@@ -18,7 +18,7 @@ struct CouponInfo {
     var price = Float(0)
     var address: String!
     var addressShort: String!
-    
+    var finePrintText: String!
     
     //temp
     var imageStr: String!

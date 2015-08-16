@@ -10,12 +10,37 @@ import UIKit
 
 class CouponDetailsController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var couponDescription: UILabel!
+    @IBOutlet weak var storeName: UILabel!
+    @IBOutlet weak var shortAddress: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var finePrintText: UILabel!
+    @IBOutlet weak var businessPage: UIButton!
+    
     var couponInfo: CouponInfo!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.backBarButtonItem?.title = "Home"
         self.navigationItem.title = couponInfo.storeName
+        
+        imageView.image = UIImage(named: couponInfo.imageStr)
+        couponDescription.text = couponInfo.description
+        storeName.text = couponInfo.storeName
+        shortAddress.text = couponInfo.addressShort
+        
+        price.text = "$" + String(format: "%g", couponInfo.price)
+        finePrintText.text = couponInfo.finePrintText
+        
+        let cLayer = businessPage.layer
+        cLayer.shadowColor = UIColor.blackColor().CGColor
+        cLayer.shadowOpacity = 0.2
+        cLayer.shadowRadius = 1
+        cLayer.shadowOffset = CGSizeMake(1, 1.5)
+        cLayer.cornerRadius = 2
+        
         // Do any additional setup after loading the view.
     }
 

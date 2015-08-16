@@ -23,7 +23,6 @@ class BrowseCouponCell: UICollectionViewCell {
         super.layoutSubviews()
         
         
-        
 //        self.couponImage.frame = CGRectMake(0,0,BrowseViewController.cellHeight, BrowseViewController.cellHeight)
     }
 

@@ -13,7 +13,7 @@ class Utils {
 
 
     static func adjustInsetWithArrow(view: UIButton) {
-        let arrowPadding: CGFloat = 16.0
+        let arrowPadding: CGFloat = 16.0 //used to be 16 for old style
         view.titleEdgeInsets = UIEdgeInsetsMake(0, -arrowPadding, 0, arrowPadding)
         view.contentEdgeInsets = UIEdgeInsetsMake(0, arrowPadding, 0, 0)
         

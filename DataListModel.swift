@@ -33,6 +33,7 @@ class DataListModel {
         coupon1.addressShort = "Sunset • San Francisco";
         coupon1.imageStr = "pic_1.jpg"
         coupon1.imageSmallStr = "pic_1_s.jpg"
+        coupon1.finePrintText = "Expires Nov 1, 2015. Limit 1 per person. Not valid with any other offers, discounts, or promotional meal deals. Unahtorized internet distribution, replication or resale is strictly prohibited. No cash back or return"
         list.append(coupon1)
         
         
@@ -45,6 +46,8 @@ class DataListModel {
         coupon2.addressShort = "Daly City";
         coupon2.imageStr = "pic_2.jpg"
         coupon2.imageSmallStr = "pic_2_s.jpg"
+        
+        coupon2.finePrintText = "Expires Nov 1, 2015. Limit 1 per person. Not valid with any other offers, discounts, or promotional meal deals. Unahtorized internet distribution, replication or resale is strictly prohibited. No cash back or return"
         list.append(coupon2)
         
         
