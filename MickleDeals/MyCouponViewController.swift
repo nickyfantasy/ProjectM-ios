@@ -8,28 +8,133 @@
 
 import UIKit
 
-class MyCouponViewController: UIViewController {
+class MyCouponViewController: UICollectionViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        static let cellMargin: CGFloat = 6
+        static let cellHeight: CGFloat = 70
+        
+        private var dataList = [CouponInfo]()
+        private let reuseIdentifier = "BrowseCouponCell"
+        private let sectionInsets = UIEdgeInsets(top: cellMargin, left: cellMargin, bottom: cellMargin, right: cellMargin)
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            dataList.append(DataListModel.instance.list[0])
+            dataList.append(DataListModel.instance.list[1])
+            Utils.addBarShadow(self.navigationController!.navigationBar)
+        }
+        
+        
+        
+        // MARK: UICollectionViewDataSource
+        
+        override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+            return 2
+        }
+        
+        
+        override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            return 1
+        }
+        
+        override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! BrowseCouponCell
+            
+            Utils.addCardShadow(cell)
+            // Configure the cell
+            
+            let couponInfo = dataList[indexPath.section]
+            
+            let couponImage = UIImage(named: couponInfo.imageSmallStr)
+            cell.couponImage.image = couponImage
+            cell.couponDescription.text = couponInfo.description
+            cell.couponLocation.text = couponInfo.storeName
+            
+            
+            cell.couponPrice.text = "$" + String(format: "%g", couponInfo.price)
+            
+            
+            return cell
+        }
+        
+        
+        
+        // MARK: UICollectionViewDelegateFlowLayout
+        
+        func collectionView(collectionView: UICollectionView,
+            layout collectionViewLayout: UICollectionViewLayout,
+            sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+                
+                let totalWidth = collectionView.frame.width;
+                
+                return CGSize(width: totalWidth - BrowseViewController.cellMargin * 2, height: BrowseViewController.cellHeight )
+        }
+        
+        
+        func collectionView(collectionView: UICollectionView,
+            layout collectionViewLayout: UICollectionViewLayout,
+            insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+                return sectionInsets
+        }
+        
+        func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+            return BrowseViewController.cellMargin
+        }
+    
+        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            
+            if let cell = sender as? UICollectionViewCell {
+                
+                let indexPath = collectionView?.indexPathForCell(cell)
+                let detailsVC = segue.destinationViewController as! CouponDetailsController
+                
+                detailsVC.couponInfo = dataList[indexPath!.section]
+            }
+            
+        }
+    
+        override func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
+            
+            collectionView.cellForItemAtIndexPath(indexPath)?.contentView.backgroundColor = Constants.highlightCellColor
+            
+        }
+        
+        
+        override func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
+            collectionView.cellForItemAtIndexPath(indexPath)?.contentView.backgroundColor = UIColor.whiteColor()
+        }
+        
+    
+    override func collectionView(collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+            //1
+            switch kind {
+                //2
+            case UICollectionElementKindSectionHeader:
+                //3
+                let headerView =
+                collectionView.dequeueReusableSupplementaryViewOfKind(kind,
+                    withReuseIdentifier: "MyCouponHeaderView",
+                    forIndexPath: indexPath)
+                    as! MyCouponHeaderView
+                let headerText: String
+                if indexPath.section == 0 {
+                    headerText = "Available"
+                } else if indexPath.section == 1 {
+                    headerText = "Used"
+                } else {
+                    headerText = ""
+                }
+                headerView.label.text = headerText
+                return headerView
+            default:
+                //4
+                assert(false, "Unexpected element kind")
+            }
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

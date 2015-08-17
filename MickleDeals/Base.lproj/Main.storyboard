@@ -58,25 +58,6 @@
             </objects>
             <point key="canvasLocation" x="-521" y="-478"/>
         </scene>
-        <!--My Coupons-->
-        <scene sceneID="tZH-dN-gDX">
-            <objects>
-                <viewController id="st8-kQ-Aiq" customClass="MyCouponViewController" customModule="MickleDeals" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8xd-gR-mBQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="MuF-oC-DST"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HCQ-AR-12N">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="My Coupons" image="ic_pricetag" selectedImage="ic_pricetag_filled" id="jEL-zW-mAw"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vbu-dZ-pum" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="283" y="-1194"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -90,7 +71,7 @@
                     <connections>
                         <segue destination="yfg-E6-HKO" kind="relationship" relationship="viewControllers" id="CeY-QH-VOg"/>
                         <segue destination="r5M-9j-5XR" kind="relationship" relationship="viewControllers" id="kEv-0e-dh1"/>
-                        <segue destination="st8-kQ-Aiq" kind="relationship" relationship="viewControllers" id="4hQ-Jv-1ZP"/>
+                        <segue destination="N4Q-ml-x7E" kind="relationship" relationship="viewControllers" id="4hQ-Jv-1ZP"/>
                         <segue destination="dZ9-yS-mU4" kind="relationship" relationship="viewControllers" id="oSc-Gt-HAJ"/>
                         <segue destination="FBg-I4-zOJ" kind="relationship" relationship="viewControllers" id="gzF-iO-dCi"/>
                     </connections>
@@ -467,6 +448,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="lrT-PL-qfv">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="qwf-fK-PHD"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="nrt-Aj-PQC"/>
                     </navigationItem>
                     <connections>
@@ -541,7 +523,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d16-Rb-Xoz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055" y="-1194"/>
+            <point key="canvasLocation" x="1867" y="-1194"/>
         </scene>
         <!--More-->
         <scene sceneID="1qe-f7-f7e">
@@ -658,7 +640,7 @@
                                                 <constraint firstItem="Kxb-uy-rF0" firstAttribute="leading" secondItem="wcn-dr-beT" secondAttribute="leadingMargin" id="Dhr-vY-VcA"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="mP8-ZA-IHI" secondAttribute="trailing" id="HB5-Zm-s7a"/>
                                                 <constraint firstItem="nvN-Bj-mee" firstAttribute="baseline" secondItem="Kxb-uy-rF0" secondAttribute="baseline" id="Rcj-Kd-lhN"/>
-                                                <constraint firstItem="mP8-ZA-IHI" firstAttribute="leading" secondItem="nvN-Bj-mee" secondAttribute="trailing" id="SG1-Oa-HT9"/>
+                                                <constraint firstItem="mP8-ZA-IHI" firstAttribute="leading" secondItem="nvN-Bj-mee" secondAttribute="trailing" constant="4" id="SG1-Oa-HT9"/>
                                                 <constraint firstItem="nvN-Bj-mee" firstAttribute="leading" secondItem="Kxb-uy-rF0" secondAttribute="trailing" constant="4" id="Wd4-ZX-S01"/>
                                                 <constraint firstItem="nvN-Bj-mee" firstAttribute="baseline" secondItem="mP8-ZA-IHI" secondAttribute="baseline" id="z2k-dQ-DSp"/>
                                             </constraints>
@@ -931,6 +913,132 @@
             </objects>
             <point key="canvasLocation" x="1054" y="-508"/>
         </scene>
+        <!--My Coupons-->
+        <scene sceneID="dJs-Ni-RCQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N4Q-ml-x7E" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Coupons" image="ic_pricetag" selectedImage="ic_pricetag_filled" id="jEL-zW-mAw"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="bWA-lK-mns">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.93725490199999995" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KJT-Rq-izy" kind="relationship" relationship="rootViewController" id="28U-Bu-21Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UMp-66-HrL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="283" y="-1194"/>
+        </scene>
+        <!--My Coupons-->
+        <scene sceneID="pSQ-m9-rxK">
+            <objects>
+                <collectionViewController id="KJT-Rq-izy" customClass="MyCouponViewController" customModule="MickleDeals" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yY4-eg-s9Y">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OGf-hd-yog">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BrowseCouponCell" id="Mcb-R4-I6Z" customClass="BrowseCouponCell" customModule="MickleDeals">
+                                <rect key="frame" x="0.0" y="50" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HoY-4L-3aj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="HoY-4L-3aj" secondAttribute="height" multiplier="150:100" id="gq9-Ol-gJe"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="G6f-v1-A9o">
+                                            <rect key="frame" x="265" y="6" width="311" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5HC-m2-DS8">
+                                            <rect key="frame" x="387" y="224" width="39" height="18"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9g-DH-JFq">
+                                            <rect key="frame" x="434" y="224" width="138" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" red="0.93725490199999995" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="G6f-v1-A9o" secondAttribute="trailing" constant="4" id="1KO-4F-Ibr"/>
+                                    <constraint firstItem="HoY-4L-3aj" firstAttribute="leading" secondItem="Mcb-R4-I6Z" secondAttribute="leading" id="HG7-CU-Qa1"/>
+                                    <constraint firstItem="G6f-v1-A9o" firstAttribute="leading" secondItem="HoY-4L-3aj" secondAttribute="trailing" constant="8" id="O9P-G8-H6z"/>
+                                    <constraint firstItem="5HC-m2-DS8" firstAttribute="leading" secondItem="G6f-v1-A9o" secondAttribute="leading" id="UNk-Me-8VT"/>
+                                    <constraint firstAttribute="trailing" secondItem="M9g-DH-JFq" secondAttribute="trailing" constant="8" id="a98-Rr-KBJ"/>
+                                    <constraint firstItem="M9g-DH-JFq" firstAttribute="bottom" secondItem="5HC-m2-DS8" secondAttribute="bottom" id="gI2-5W-4R4"/>
+                                    <constraint firstItem="G6f-v1-A9o" firstAttribute="top" secondItem="Mcb-R4-I6Z" secondAttribute="top" constant="6" id="gaQ-oR-xHT"/>
+                                    <constraint firstItem="M9g-DH-JFq" firstAttribute="leading" secondItem="5HC-m2-DS8" secondAttribute="trailing" constant="4" id="j3F-Zu-anC"/>
+                                    <constraint firstItem="HoY-4L-3aj" firstAttribute="height" secondItem="Mcb-R4-I6Z" secondAttribute="height" id="jtu-ZJ-Xmn"/>
+                                    <constraint firstAttribute="bottom" secondItem="5HC-m2-DS8" secondAttribute="bottom" constant="6" id="rcm-bm-Guz"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="couponDescription" destination="G6f-v1-A9o" id="LBe-Ir-Ljd"/>
+                                    <outlet property="couponImage" destination="HoY-4L-3aj" id="J6y-2H-x6v"/>
+                                    <outlet property="couponLocation" destination="5HC-m2-DS8" id="fGO-R6-NjV"/>
+                                    <outlet property="couponPrice" destination="M9g-DH-JFq" id="CqV-Vo-5WN"/>
+                                    <segue destination="Tnk-Nk-p0K" kind="show" id="Jf3-1P-6PR"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCouponHeaderView" id="Rhh-iE-JOy" customClass="MyCouponHeaderView" customModule="MickleDeals" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7V1-zb-kZI">
+                                    <rect key="frame" x="12" y="14" width="600" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="7V1-zb-kZI" firstAttribute="centerY" secondItem="Rhh-iE-JOy" secondAttribute="centerY" id="51p-YE-vOK"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="7V1-zb-kZI" secondAttribute="trailing" constant="542" id="7Eo-9d-82j"/>
+                                <constraint firstItem="7V1-zb-kZI" firstAttribute="leading" secondItem="Rhh-iE-JOy" secondAttribute="leading" constant="12" id="c1T-UX-vrr"/>
+                                <constraint firstAttribute="trailing" secondItem="7V1-zb-kZI" secondAttribute="trailing" id="els-IW-JNh"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="label" destination="7V1-zb-kZI" id="bSb-O9-jxf"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="KJT-Rq-izy" id="a6c-OR-4q3"/>
+                            <outlet property="delegate" destination="KJT-Rq-izy" id="WiL-PR-eIs"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="My Coupons" id="u1Z-aB-a6w"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tT2-wA-13W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="295" y="-508"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic_arrow_down" width="14" height="21"/>
@@ -943,6 +1051,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="X8h-Ez-8Wd"/>
+        <segue reference="Jf3-1P-6PR"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.93725490199999995" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

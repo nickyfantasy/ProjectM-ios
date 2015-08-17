@@ -23,7 +23,8 @@ class CouponDetailsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.backBarButtonItem?.title = "Home"
+        
+//        self.navigationItem.backBarButtonItem?.title = "Home"
         self.navigationItem.title = couponInfo.storeName
         
         imageView.image = UIImage(named: couponInfo.imageStr)
