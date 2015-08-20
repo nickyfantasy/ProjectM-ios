@@ -27,11 +27,17 @@ class CouponDetailsController: UIViewController {
         
     }
     
+    func addBarShadow() {
+        
+        Utils.addBarShadow(self.navigationController!.navigationBar)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Utils.addBarShadow(self.navigationController!.navigationBar)
+        
+        NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector: Selector("addBarShadow"), userInfo: nil, repeats: false)
         
 //        self.navigationItem.backBarButtonItem?.title = "Home"
         self.navigationItem.title = couponInfo.storeName
