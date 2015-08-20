@@ -20,10 +20,30 @@ class MyCouponViewController: UICollectionViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             
+            self.clearsSelectionOnViewWillAppear = true
+            
             dataList.append(DataListModel.instance.list[0])
             dataList.append(DataListModel.instance.list[1])
-            Utils.addBarShadow(self.navigationController!.navigationBar)
         }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        Utils.addBarShadow(self.navigationController!.navigationBar)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        
+//        self.navigationController?.navigationBar.layer.shadowRadius = 0
+//        self.navigationController?.navigationBar.layer.shadowOffset = CGSizeMake(0, 0)
+    }
         
         
         
@@ -55,6 +75,9 @@ class MyCouponViewController: UICollectionViewController {
             cell.couponPrice.text = "$" + String(format: "%g", couponInfo.price)
             
             
+            let selectedBgView = UIView(frame: cell.frame)
+            selectedBgView.backgroundColor = Constants.highlightCellColor
+            cell.selectedBackgroundView = selectedBgView
             return cell
         }
         
@@ -94,25 +117,25 @@ class MyCouponViewController: UICollectionViewController {
             
         }
     
-        override func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
-            
-            collectionView.cellForItemAtIndexPath(indexPath)?.contentView.backgroundColor = Constants.highlightCellColor
-            
-        }
-        
-        
-        override func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
-            collectionView.cellForItemAtIndexPath(indexPath)?.contentView.backgroundColor = UIColor.whiteColor()
-        }
-        
+//        override func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
+//            
+//            collectionView.cellForItemAtIndexPath(indexPath)?.contentView.backgroundColor = Constants.highlightCellColor
+//            
+//        }
+//        
+//        
+//        override func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
+//            collectionView.cellForItemAtIndexPath(indexPath)?.contentView.backgroundColor = UIColor.whiteColor()
+//        }
+    
     
     override func collectionView(collectionView: UICollectionView,
         viewForSupplementaryElementOfKind kind: String,
         atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
             //1
-            switch kind {
-                //2
-            case UICollectionElementKindSectionHeader:
+//            switch kind {
+//                //2
+//            case UICollectionElementKindSectionHeader:
                 //3
                 let headerView =
                 collectionView.dequeueReusableSupplementaryViewOfKind(kind,
@@ -129,10 +152,10 @@ class MyCouponViewController: UICollectionViewController {
                 }
                 headerView.label.text = headerText
                 return headerView
-            default:
-                //4
-                assert(false, "Unexpected element kind")
-            }
+//            default:
+//                //4
+//                assert(false, "Unexpected element kind")
+//            }
     }
     
 

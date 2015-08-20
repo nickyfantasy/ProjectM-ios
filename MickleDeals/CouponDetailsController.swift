@@ -20,9 +20,18 @@ class CouponDetailsController: UIViewController {
     
     var couponInfo: CouponInfo!
     
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        Utils.addBarShadow(self.navigationController!.navigationBar)
         
 //        self.navigationItem.backBarButtonItem?.title = "Home"
         self.navigationItem.title = couponInfo.storeName

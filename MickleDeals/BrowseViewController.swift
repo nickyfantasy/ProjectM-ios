@@ -32,6 +32,7 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
     private var locationType = 0
     private var sortType = 0
     
+    private var selectedIndexPath: NSIndexPath?
     
 //    @IBAction func notificationClick(sender: UIBarButtonItem) {
 //        
@@ -98,8 +99,24 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
         //send request
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //this is to remove 1px line under navbar
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.layer.shadowRadius = 0
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSizeMake(0, 0)
+        
+        if selectedIndexPath != nil {
+           collectionView.deselectItemAtIndexPath(selectedIndexPath!, animated: false)
+        }
+        NSLog("viewWillAppear")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSLog("viewDidAppear")
         
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -152,6 +169,9 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
         
         cell.couponPrice.text = "$" + String(format: "%g", couponInfo.price)
         
+        let selectedBgView = UIView(frame: cell.frame)
+        selectedBgView.backgroundColor = Constants.highlightCellColor
+        cell.selectedBackgroundView = selectedBgView
     
         return cell
     }
@@ -185,8 +205,8 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
         if let cell = sender as? UICollectionViewCell {
             
             let indexPath = collectionView?.indexPathForCell(cell)
+            selectedIndexPath = indexPath
             let detailsVC = segue.destinationViewController as! CouponDetailsController
-            
             detailsVC.couponInfo = dataList[indexPath!.row]
         } else {
             
@@ -227,16 +247,15 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
         
     }
     
-    func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
-        
-        collectionView.cellForItemAtIndexPath(indexPath)?.contentView.backgroundColor = Constants.highlightCellColor
-        
-    }
     
-    
-    func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
-        collectionView.cellForItemAtIndexPath(indexPath)?.contentView.backgroundColor = UIColor.whiteColor()
-    }
+//    func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
+//        collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = Constants.highlightCellColor
+//    }
+//    
+//    
+//    func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
+//        collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.whiteColor()
+//    }
 
     // MARK: UICollectionViewDelegate
 
