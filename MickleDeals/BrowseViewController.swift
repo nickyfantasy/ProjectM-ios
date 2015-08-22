@@ -124,7 +124,7 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
         let image = UIImage(named: "full_logo.png")
         self.navigationItem.titleView = UIImageView(image: image)
         
-        Utils.addBarShadow(filterToolBar)
+        filterToolBar.applyBarShadow()
         Utils.adjustInsetWithArrow(categoryBtn)
         Utils.adjustInsetWithArrow(locationBtn)
         //formatter.numberStyle = .CurrencyStyle
@@ -155,7 +155,7 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! BrowseCouponCell
     
-        Utils.addCardShadow(cell)
+        cell.applyCellShadow()
         // Configure the cell
         
         let couponInfo = dataList[indexPath.row]
@@ -170,7 +170,7 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
         cell.couponPrice.text = "$" + String(format: "%g", couponInfo.price)
         
         let selectedBgView = UIView(frame: cell.frame)
-        selectedBgView.backgroundColor = Constants.highlightCellColor
+        selectedBgView.backgroundColor = UIColor.highlightCellColor()
         cell.selectedBackgroundView = selectedBgView
     
         return cell
@@ -208,6 +208,7 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
             selectedIndexPath = indexPath
             let detailsVC = segue.destinationViewController as! CouponDetailsController
             detailsVC.couponInfo = dataList[indexPath!.row]
+            detailsVC.hidesBottomBarWhenPushed = true
         } else {
             
             let filterListVC = segue.destinationViewController as! FilterListController

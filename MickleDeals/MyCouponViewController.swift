@@ -34,7 +34,7 @@ class MyCouponViewController: UICollectionViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        Utils.addBarShadow(self.navigationController!.navigationBar)
+        self.navigationController!.navigationBar.applyBarShadow()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -61,7 +61,7 @@ class MyCouponViewController: UICollectionViewController {
         override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! BrowseCouponCell
             
-            Utils.addCardShadow(cell)
+            cell.applyCellShadow()
             // Configure the cell
             
             let couponInfo = dataList[indexPath.section]
@@ -76,7 +76,7 @@ class MyCouponViewController: UICollectionViewController {
             
             
             let selectedBgView = UIView(frame: cell.frame)
-            selectedBgView.backgroundColor = Constants.highlightCellColor
+            selectedBgView.backgroundColor = UIColor.highlightCellColor()
             cell.selectedBackgroundView = selectedBgView
             return cell
         }

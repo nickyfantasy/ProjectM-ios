@@ -17,7 +17,12 @@ class CouponDetailsController: UIViewController {
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var finePrintText: UILabel!
     @IBOutlet weak var businessPage: UIButton!
+    @IBOutlet weak var buyButton: UIButton!
     
+    @IBAction func buyAction(sender: AnyObject) {
+        let confirmPurchaseVC = ConfirmPurchaseViewController()
+        presentViewController(confirmPurchaseVC, animated: true, completion: nil)
+    }
     var couponInfo: CouponInfo!
     
     
@@ -27,9 +32,14 @@ class CouponDetailsController: UIViewController {
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        addBarShadow()
+    }
+    
     func addBarShadow() {
         
-        Utils.addBarShadow(self.navigationController!.navigationBar)
+        self.navigationController!.navigationBar.applyBarShadow()
     }
     
     
@@ -47,15 +57,17 @@ class CouponDetailsController: UIViewController {
         storeName.text = couponInfo.storeName
         shortAddress.text = couponInfo.addressShort
         
-        price.text = "$" + String(format: "%g", couponInfo.price)
+        let priceStr = "$" + String(format: "%g", couponInfo.price)
+        price.text = priceStr
         finePrintText.text = couponInfo.finePrintText
         
-        let cLayer = businessPage.layer
-        cLayer.shadowColor = UIColor.blackColor().CGColor
-        cLayer.shadowOpacity = 0.2
-        cLayer.shadowRadius = 1
-        cLayer.shadowOffset = CGSizeMake(1, 1.5)
-        cLayer.cornerRadius = 2
+        businessPage.applyShadow(1, opacity: 0.4, xOffset: 1, yOffset: 1, useShadowPath: false)
+        
+        buyButton.setTitle("Get this Coupon for \(priceStr)", forState: .Normal)
+        buyButton.applyButtonStyle()
+        if !MDConfig.isIos8Above {
+            buyButton.titleLabel!.font = UIFont(name: "Helvetica-Bold", size: buyButton.titleLabel!.font.pointSize)
+        }
         
         // Do any additional setup after loading the view.
     }
