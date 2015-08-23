@@ -23,6 +23,7 @@ class ConfirmPurchaseViewController: UIViewController {
     
     @IBOutlet weak var whiteCellView: UIView!
     
+    @IBOutlet weak var navBar: UINavigationBar!
     var couponInfo: CouponInfo!
     
     @IBAction func cancelAction(sender: AnyObject) {
@@ -37,10 +38,15 @@ class ConfirmPurchaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        navBar.applyBarShadow()
 
-        whiteCellView.resizeToFitHeight()
-        whiteCellView.layer.cornerRadius = 3
-        whiteCellView.applyShadow(2, opacity: 0.3, xOffset: 1.5, yOffset: 2, useShadowPath: true)
+        whiteCellView.resizeToFitSubviews()
+//        whiteCellView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+//        whiteCellView.resizeToFitHeight()
+//        whiteCellView.layer.cornerRadius = 3
+        whiteCellView.applyShadow(2.52, opacity: 0.25, xOffset: 1.5, yOffset: 2, useShadowPath: MDConfig.isIos8Above ? false : true)
         purchaseBtn.applyButtonStyle()
     purchaseBtn.titleLabel!.applyBoldAsBlack()
         
