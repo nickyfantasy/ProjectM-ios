@@ -20,7 +20,8 @@ class CouponDetailsController: UIViewController {
     @IBOutlet weak var buyButton: UIButton!
     
     @IBAction func buyAction(sender: AnyObject) {
-        let confirmPurchaseVC = ConfirmPurchaseViewController()
+        let confirmPurchaseVC = self.storyboard?.instantiateViewControllerWithIdentifier("ConfirmPurchase") as! ConfirmPurchaseViewController
+        confirmPurchaseVC.couponInfo = couponInfo
         presentViewController(confirmPurchaseVC, animated: true, completion: nil)
     }
     var couponInfo: CouponInfo!
@@ -65,9 +66,7 @@ class CouponDetailsController: UIViewController {
         
         buyButton.setTitle("Get this Coupon for \(priceStr)", forState: .Normal)
         buyButton.applyButtonStyle()
-        if !MDConfig.isIos8Above {
-            buyButton.titleLabel!.font = UIFont(name: "Helvetica-Bold", size: buyButton.titleLabel!.font.pointSize)
-        }
+        buyButton.titleLabel!.applyBoldAsBlack()
         
         // Do any additional setup after loading the view.
     }

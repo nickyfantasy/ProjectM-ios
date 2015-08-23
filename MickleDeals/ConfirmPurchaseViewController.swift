@@ -10,9 +10,48 @@ import UIKit
 
 class ConfirmPurchaseViewController: UIViewController {
 
+    @IBOutlet weak var storeName: UILabel!
+    @IBOutlet weak var couponDescription: UILabel!
+    
+    @IBOutlet weak var paymentLabel: UILabel!
+    @IBOutlet weak var couponPrice: UILabel!
+    
+    @IBOutlet weak var totalPrice: UILabel!
+    @IBOutlet weak var applyCredit: UILabel!
+    @IBOutlet weak var currentCredit: UILabel!
+    @IBOutlet weak var purchaseBtn: UIButton!
+    
+    @IBOutlet weak var whiteCellView: UIView!
+    
+    var couponInfo: CouponInfo!
+    
+    @IBAction func cancelAction(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func purchaseAction(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        whiteCellView.resizeToFitHeight()
+        whiteCellView.layer.cornerRadius = 3
+        whiteCellView.applyShadow(2, opacity: 0.3, xOffset: 1.5, yOffset: 2, useShadowPath: true)
+        purchaseBtn.applyButtonStyle()
+    purchaseBtn.titleLabel!.applyBoldAsBlack()
+        
+        storeName.text = couponInfo.storeName
+        couponDescription.text = couponInfo.description
+        
+        let priceStr = "$" + String(format: "%g", couponInfo.price)
+        couponPrice.text = priceStr
+        applyCredit.text = "-" + priceStr
+        currentCredit.text = "Curent Credit: $7"
+        totalPrice.text = "$0"
         // Do any additional setup after loading the view.
     }
 

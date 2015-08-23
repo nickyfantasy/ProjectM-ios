@@ -30,6 +30,7 @@ extension UIView {
         self.layer.shadowColor = UIColor.blackColor().CGColor
         self.layer.shadowOpacity = opacity
         self.layer.shadowOffset = CGSizeMake(xOffset, yOffset)
+        
         if useShadowPath {
             self.layer.shadowPath = UIBezierPath(rect: self.bounds).CGPath
         } else {
@@ -50,6 +51,30 @@ extension UIView {
         self.layer.cornerRadius = 3
         self.backgroundColor = UIColor.buttonColor()
     }
+    func resizeToFitSubviews() {
+        var width: CGFloat = 0
+        var height: CGFloat = 0
+        for someView in self.subviews {
+            let aView = someView as! UIView
+            let newWidth = aView.frame.origin.x + aView.frame.width
+            let newHeight = aView.frame.origin.y + aView.frame.height
+            width = max(width, newWidth)
+            height = max(height, newHeight)
+        }
+        
+        frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: width, height: height)
+    }
+    
+    func resizeToFitHeight() {
+        var height: CGFloat = 0
+        for someView in self.subviews {
+            let aView = someView 
+            height += aView.frame.height
+            NSLog("height = \(height)")
+        }
+        
+        frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.width, height: height)
+    }
 }
 
 extension UIFont {
@@ -58,6 +83,17 @@ extension UIFont {
         return UIFont(descriptor: descriptor, size: 0)
     }
 }
+
+extension UILabel {
+    func applyBoldAsBlack() {
+    
+    if !MDConfig.isIos8Above {
+    self.font = UIFont(name: "Helvetica-Bold", size: self.font.pointSize)
+    }
+}
+}
+
+
 
 class Utils {
 
