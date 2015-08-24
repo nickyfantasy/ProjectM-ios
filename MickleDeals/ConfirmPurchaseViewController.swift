@@ -23,6 +23,8 @@ class ConfirmPurchaseViewController: UIViewController {
     
     @IBOutlet weak var whiteCellView: UIView!
     
+    @IBOutlet weak var arrowHolder: UILabel!
+    @IBOutlet weak var paymentRow: UIView!
     @IBOutlet weak var navBar: UINavigationBar!
     var couponInfo: CouponInfo!
     
@@ -38,6 +40,15 @@ class ConfirmPurchaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //a hack to add arrow on a uiview
+        //create a uilabel placeholder with 20 width constraints and 1 space as text in storyboard and add table view cell to it
+        //reason: adding static table view cell in uiview will cause exception
+        let disclosure = UITableViewCell()
+        arrowHolder.addSubview(disclosure)
+        disclosure.frame = arrowHolder.bounds
+        disclosure.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        disclosure.userInteractionEnabled = false
         
         
         navBar.applyBarShadow()
