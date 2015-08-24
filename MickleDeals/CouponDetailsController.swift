@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CouponDetailsController: UIViewController {
+class CouponDetailsController: UIViewController, MDLoginCallback {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var couponDescription: UILabel!
@@ -20,12 +20,11 @@ class CouponDetailsController: UIViewController {
     @IBOutlet weak var buyButton: UIButton!
     
     @IBAction func buyAction(sender: AnyObject) {
-        let confirmPurchaseVC = self.storyboard?.instantiateViewControllerWithIdentifier("ConfirmPurchase") as! ConfirmPurchaseViewController
-        confirmPurchaseVC.couponInfo = couponInfo
-        presentViewController(confirmPurchaseVC, animated: true, completion: nil)
+        
+        MDLoginManager.loginIfNecessary(self, callback: self)
     }
-    var couponInfo: CouponInfo!
     
+    var couponInfo: CouponInfo!
     
     
     override func viewWillAppear(animated: Bool) {
@@ -86,5 +85,12 @@ class CouponDetailsController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func onLoginSuccess() {
+        
+        let confirmPurchaseVC = self.storyboard?.instantiateViewControllerWithIdentifier("ConfirmPurchase") as! ConfirmPurchaseViewController
+        confirmPurchaseVC.couponInfo = couponInfo
+        presentViewController(confirmPurchaseVC, animated: true, completion: nil)
+    }
 
 }

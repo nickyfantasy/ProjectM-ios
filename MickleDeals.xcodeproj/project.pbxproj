@@ -24,6 +24,9 @@
 		20424B0B1B78753E007DB15C /* FilterListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20424B091B78753E007DB15C /* FilterListController.swift */; };
 		20424B0F1B79E137007DB15C /* NotificationListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20424B0D1B79E137007DB15C /* NotificationListController.swift */; };
 		207D00C11B782FEC000359CA /* MDConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D00C01B782FEC000359CA /* MDConfig.swift */; };
+		208775ED1B8A9D2300FDADBE /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208775EC1B8A9D2300FDADBE /* PaymentViewController.swift */; };
+		208775EF1B8A9D4C00FDADBE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208775EE1B8A9D4C00FDADBE /* LoginViewController.swift */; };
+		208775F11B8AC22E00FDADBE /* MDLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208775F01B8AC22E00FDADBE /* MDLoginManager.swift */; };
 		20B0952C1B812A030038E45B /* SearchUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B0952B1B812A030038E45B /* SearchUIViewController.swift */; };
 		20B095301B814CD00038E45B /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B0952F1B814CD00038E45B /* MoreViewController.swift */; };
 		20C006461B891766007AB84A /* ConfirmPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C006451B891766007AB84A /* ConfirmPurchaseViewController.swift */; };
@@ -74,6 +77,9 @@
 		20424B091B78753E007DB15C /* FilterListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListController.swift; sourceTree = "<group>"; };
 		20424B0D1B79E137007DB15C /* NotificationListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationListController.swift; path = ../NotificationListController.swift; sourceTree = "<group>"; };
 		207D00C01B782FEC000359CA /* MDConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDConfig.swift; sourceTree = "<group>"; };
+		208775EC1B8A9D2300FDADBE /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		208775EE1B8A9D4C00FDADBE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		208775F01B8AC22E00FDADBE /* MDLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDLoginManager.swift; sourceTree = "<group>"; };
 		20B0952B1B812A030038E45B /* SearchUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUIViewController.swift; sourceTree = "<group>"; };
 		20B0952F1B814CD00038E45B /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreViewController.swift; path = ../MoreViewController.swift; sourceTree = "<group>"; };
 		20C006451B891766007AB84A /* ConfirmPurchaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmPurchaseViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +149,8 @@
 				20B0952B1B812A030038E45B /* SearchUIViewController.swift */,
 				20359CF51B6EEF82007BF4CE /* MyCouponViewController.swift */,
 				20359CC11B6EE700007BF4CE /* Main.storyboard */,
+				208775EE1B8A9D4C00FDADBE /* LoginViewController.swift */,
+				208775EC1B8A9D2300FDADBE /* PaymentViewController.swift */,
 				20E78FD91B76ABD2005DA659 /* CouponDetailsController.swift */,
 				20EE87BE1B744761005CA45B /* BrowseCouponCell.swift */,
 				20359CC41B6EE700007BF4CE /* Assets.xcassets */,
@@ -179,6 +187,7 @@
 				20359D051B6F24F0007BF4CE /* Constants.swift */,
 				20359D0D1B6F4F38007BF4CE /* Utils.swift */,
 				207D00C01B782FEC000359CA /* MDConfig.swift */,
+				208775F01B8AC22E00FDADBE /* MDLoginManager.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -323,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				208775EF1B8A9D4C00FDADBE /* LoginViewController.swift in Sources */,
 				20359CFB1B6EEF9C007BF4CE /* SearchViewController.swift in Sources */,
 				20359CF71B6EEF82007BF4CE /* MyCouponViewController.swift in Sources */,
 				207D00C11B782FEC000359CA /* MDConfig.swift in Sources */,
@@ -330,6 +340,8 @@
 				20424B0F1B79E137007DB15C /* NotificationListController.swift in Sources */,
 				20EE87BC1B708B0A005CA45B /* BrowseViewController.swift in Sources */,
 				20B095301B814CD00038E45B /* MoreViewController.swift in Sources */,
+				208775F11B8AC22E00FDADBE /* MDLoginManager.swift in Sources */,
+				208775ED1B8A9D2300FDADBE /* PaymentViewController.swift in Sources */,
 				20359D0A1B6F4CFE007BF4CE /* CouponInfo.swift in Sources */,
 				20359D0E1B6F4F38007BF4CE /* Utils.swift in Sources */,
 				20359D061B6F24F0007BF4CE /* Constants.swift in Sources */,
@@ -492,7 +504,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mickledeals.MickleDeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -509,7 +521,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mickledeals.MickleDeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

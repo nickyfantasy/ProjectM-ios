@@ -16,6 +16,7 @@ class MDConfig {
     static var deviceWidth: CGFloat = 0
     static var deviceHeight: CGFloat = 0
     
+    
     static func loadConfig() {
         let defaults = NSUserDefaults.standardUserDefaults()
         isChineseSettings = (defaults.objectForKey("isChinese") as? Bool) ?? false
