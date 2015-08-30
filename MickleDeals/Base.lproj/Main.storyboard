@@ -158,7 +158,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CMo-aQ-pyE">
-                                <rect key="frame" x="36" y="265" width="529" height="30"/>
+                                <rect key="frame" x="36" y="265" width="529" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="fuS-W7-F4H"/>
                                 </constraints>
@@ -176,13 +176,13 @@
                             <button contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcS-KI-nNv" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="8" y="74" width="600" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Ver-a5-acU"/>
+                                    <constraint firstAttribute="height" constant="55" id="Ver-a5-acU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="We'll never post anything without your permission" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11k-Z0-gvn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="We'll never post anything without your permission" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="11k-Z0-gvn">
                                 <rect key="frame" x="139" y="122" width="341" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -223,10 +223,10 @@
                             <constraint firstItem="ZJO-iJ-Zjw" firstAttribute="leading" secondItem="U5n-7M-MWB" secondAttribute="trailing" constant="16" id="Wgf-xw-dNv"/>
                             <constraint firstItem="11k-Z0-gvn" firstAttribute="top" secondItem="gcS-KI-nNv" secondAttribute="bottom" constant="8" id="aBD-Gh-t2M"/>
                             <constraint firstItem="v16-lM-OWj" firstAttribute="leading" secondItem="ZJO-iJ-Zjw" secondAttribute="trailing" constant="16" id="aef-Q5-f8j"/>
-                            <constraint firstItem="11k-Z0-gvn" firstAttribute="leading" secondItem="1lQ-9K-CoZ" secondAttribute="leadingMargin" id="bfP-I5-oYS"/>
-                            <constraint firstItem="gcS-KI-nNv" firstAttribute="top" secondItem="Ert-O6-u7q" secondAttribute="bottom" constant="12" id="c4m-DC-u65"/>
+                            <constraint firstItem="11k-Z0-gvn" firstAttribute="leading" secondItem="1lQ-9K-CoZ" secondAttribute="leadingMargin" constant="12" id="bfP-I5-oYS"/>
+                            <constraint firstItem="gcS-KI-nNv" firstAttribute="top" secondItem="Ert-O6-u7q" secondAttribute="bottom" constant="14" id="c4m-DC-u65"/>
                             <constraint firstAttribute="trailing" secondItem="v16-lM-OWj" secondAttribute="trailing" constant="16" id="c7v-Ac-RSC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="11k-Z0-gvn" secondAttribute="trailing" id="dhB-LM-Hmy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="11k-Z0-gvn" secondAttribute="trailing" constant="12" id="dhB-LM-Hmy"/>
                             <constraint firstItem="v16-lM-OWj" firstAttribute="centerY" secondItem="ZJO-iJ-Zjw" secondAttribute="centerY" id="eHW-89-9j2"/>
                             <constraint firstItem="c6i-1o-9r3" firstAttribute="width" secondItem="RIa-Yy-aIL" secondAttribute="width" id="fAl-9R-nSz"/>
                             <constraint firstItem="U5n-7M-MWB" firstAttribute="centerY" secondItem="ZJO-iJ-Zjw" secondAttribute="centerY" id="fCN-3m-bwf"/>

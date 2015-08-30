@@ -33,7 +33,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        fbButton.applyShadow(2, opacity: 0.3, xOffset: 1, yOffset: 1.5, useShadowPath: MDConfig.isIos8Above ? false : true)
         let image = UIImage(named: "full_logo.png")
         navItem.titleView = UIImageView(image: image)
         navBar.applyBarShadow()
@@ -44,8 +44,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate  {
         }
         else
         {
-            fbButton.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 20)
-            fbButton.readPermissions = ["public_profile", "email", "user_friends"]
+            fbButton.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 19)
+            fbButton.readPermissions = ["public_profile", "email", "user_birthday"]
             fbButton.delegate = self
         }
 
@@ -67,7 +67,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate  {
             // should check if specific permissions missing
             if result.grantedPermissions.contains("email")
             {
+                print("Contains email permission")
                 // Do work
+            } else {
+                print(" does not contain email permissison")
             }
             returnUserData()
         }
@@ -79,7 +82,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate  {
     
     func returnUserData()
     {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"name,id,email,gender,birthday"])
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             
             if ((error) != nil)
@@ -89,12 +92,33 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate  {
             }
             else
             {
+                
+                
                 print("fetched user: \(result)")
                 let userName : NSString = result.valueForKey("name") as! NSString
-                print("User Name is: \(userName)")
                 let userEmail : NSString = result.valueForKey("email") as! NSString
-                print("User Email is: \(userEmail)")
+                let userId : NSString = result.valueForKey("id") as! NSString
+                
+                let birthday : NSString? = result.valueForKey("birthday") as? NSString
+                let gender : NSString? = result.valueForKey("gender") as? NSString
+                
+                //comment out the log and just send to server
+                print("userName = \(userName) userEmail = \(userEmail) userId = \(userId)")
+                print("birthday = \(birthday) gender = \(gender)")
             }
         })
     }
 }
+
+
+//if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
+//    [[[FBSDKGraphRequest alloc]
+//        initWithGraphPath:@"me/feed"
+//        parameters: @{ @"message" : @"hello world"}
+//    HTTPMethod:@"POST"]
+//    startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+//        if (!error) {
+//            NSLog(@"Post id:%@", result[@"id"]);
+//        }
+//    }];
+//}

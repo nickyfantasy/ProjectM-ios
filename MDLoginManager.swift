@@ -18,8 +18,6 @@ class MDLoginManager {
     static var userEmail: String?
     static var userId: String?
     
-    static var isFbLogin = false
-    
     static var pendingCallback: MDLoginCallback?
     
     static func loadLoginInfo() {
@@ -31,6 +29,10 @@ class MDLoginManager {
     
     static func isLogin() -> Bool {
         return userId != nil
+    }
+    
+    static func isFbLogin() -> Bool {
+        return FBSDKAccessToken.currentAccessToken() != nil
     }
     
     static func loginIfNecessary(vc: UIViewController, callback: MDLoginCallback) {
