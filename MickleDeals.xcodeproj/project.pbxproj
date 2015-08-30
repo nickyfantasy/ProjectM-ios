@@ -23,6 +23,10 @@
 		20359D0E1B6F4F38007BF4CE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20359D0D1B6F4F38007BF4CE /* Utils.swift */; };
 		20424B0B1B78753E007DB15C /* FilterListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20424B091B78753E007DB15C /* FilterListController.swift */; };
 		20424B0F1B79E137007DB15C /* NotificationListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20424B0D1B79E137007DB15C /* NotificationListController.swift */; };
+		204EB1141B9249BB00639811 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204EB1131B9249BB00639811 /* FBSDKCoreKit.framework */; };
+		204EB1181B9255B600639811 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204EB1161B9255B600639811 /* FBSDKLoginKit.framework */; };
+		204EB1191B9255B600639811 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204EB1171B9255B600639811 /* FBSDKShareKit.framework */; };
+		204EB11B1B9255FD00639811 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204EB11A1B9255FD00639811 /* Bolts.framework */; };
 		207D00C11B782FEC000359CA /* MDConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D00C01B782FEC000359CA /* MDConfig.swift */; };
 		208775ED1B8A9D2300FDADBE /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208775EC1B8A9D2300FDADBE /* PaymentViewController.swift */; };
 		208775EF1B8A9D4C00FDADBE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208775EE1B8A9D4C00FDADBE /* LoginViewController.swift */; };
@@ -76,6 +80,11 @@
 		20359D0D1B6F4F38007BF4CE /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		20424B091B78753E007DB15C /* FilterListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListController.swift; sourceTree = "<group>"; };
 		20424B0D1B79E137007DB15C /* NotificationListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationListController.swift; path = ../NotificationListController.swift; sourceTree = "<group>"; };
+		204EB1131B9249BB00639811 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../Downloads/FacebookSDKs-iOS-20150813/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		204EB1151B924D4D00639811 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "MickleDeals/Bridging-Header.h"; sourceTree = "<group>"; };
+		204EB1161B9255B600639811 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../Downloads/FacebookSDKs-iOS-20150813/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		204EB1171B9255B600639811 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../Downloads/FacebookSDKs-iOS-20150813/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		204EB11A1B9255FD00639811 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../Downloads/FacebookSDKs-iOS-20150813/Bolts.framework"; sourceTree = "<group>"; };
 		207D00C01B782FEC000359CA /* MDConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDConfig.swift; sourceTree = "<group>"; };
 		208775EC1B8A9D2300FDADBE /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		208775EE1B8A9D4C00FDADBE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +103,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				204EB1181B9255B600639811 /* FBSDKLoginKit.framework in Frameworks */,
+				204EB1141B9249BB00639811 /* FBSDKCoreKit.framework in Frameworks */,
+				204EB1191B9255B600639811 /* FBSDKShareKit.framework in Frameworks */,
+				204EB11B1B9255FD00639811 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +130,7 @@
 		20359CAF1B6EE6FF007BF4CE = {
 			isa = PBXGroup;
 			children = (
+				204EB1121B92498B00639811 /* Frameworks */,
 				20359D081B6F4CB8007BF4CE /* DataModel */,
 				20359D071B6F4CA8007BF4CE /* Utils */,
 				20359CBA1B6EE6FF007BF4CE /* MickleDeals */,
@@ -188,6 +202,7 @@
 				20359D0D1B6F4F38007BF4CE /* Utils.swift */,
 				207D00C01B782FEC000359CA /* MDConfig.swift */,
 				208775F01B8AC22E00FDADBE /* MDLoginManager.swift */,
+				204EB1151B924D4D00639811 /* Bridging-Header.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -199,6 +214,17 @@
 				20359D0B1B6F4E3C007BF4CE /* DataListModel.swift */,
 			);
 			name = DataModel;
+			sourceTree = "<group>";
+		};
+		204EB1121B92498B00639811 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				204EB11A1B9255FD00639811 /* Bolts.framework */,
+				204EB1161B9255B600639811 /* FBSDKLoginKit.framework */,
+				204EB1171B9255B600639811 /* FBSDKShareKit.framework */,
+				204EB1131B9249BB00639811 /* FBSDKCoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -498,12 +524,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "/Users/chaniat/Downloads/FacebookSDKs-iOS-20150813";
 				INFOPLIST_FILE = MickleDeals/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mickledeals.MickleDeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MickleDeals/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -515,12 +543,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "/Users/chaniat/Downloads/FacebookSDKs-iOS-20150813";
 				INFOPLIST_FILE = MickleDeals/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mickledeals.MickleDeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MickleDeals/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
