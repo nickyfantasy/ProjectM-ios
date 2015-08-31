@@ -31,4 +31,11 @@ class MDConfig {
         deviceHeight = UIScreen.mainScreen().applicationFrame.height
     }
     
+    static func setLanguage(isChinese: Bool) {
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setBool(isChinese, forKey: "isChinese")
+        defaults.synchronize()
+    }
+    
 }

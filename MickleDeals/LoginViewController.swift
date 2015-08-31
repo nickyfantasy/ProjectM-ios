@@ -33,6 +33,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         fbButton.applyShadow(2, opacity: 0.3, xOffset: 1, yOffset: 1.5, useShadowPath: MDConfig.isIos8Above ? false : true)
         let image = UIImage(named: "full_logo.png")
         navItem.titleView = UIImageView(image: image)
@@ -95,16 +96,24 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate  {
                 
                 
                 print("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                let userEmail : NSString = result.valueForKey("email") as! NSString
-                let userId : NSString = result.valueForKey("id") as! NSString
+                let userName : String = result.valueForKey("name") as! String
+                let userEmail : String = result.valueForKey("email") as! String
+                let userId : String = result.valueForKey("id") as! String
                 
-                let birthday : NSString? = result.valueForKey("birthday") as? NSString
-                let gender : NSString? = result.valueForKey("gender") as? NSString
+                let birthday : String? = result.valueForKey("birthday") as? String
+                let gender : String? = result.valueForKey("gender") as? String
                 
                 //comment out the log and just send to server
                 print("userName = \(userName) userEmail = \(userEmail) userId = \(userId)")
-                print("birthday = \(birthday) gender = \(gender)")
+                if birthday != nil && gender != nil {
+                    print("birthday = \(birthday!) gender = \(gender!)")
+                }
+                
+                MDLoginManager.setLoginInfo(userId, userEmail: userEmail, userName: userName)
+                
+                //send data to server and wait for copmlete
+                
+                self.dismissViewControllerAnimated(true, completion: self.loginCompletionHandler)
             }
         })
     }
