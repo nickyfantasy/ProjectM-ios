@@ -10,6 +10,7 @@ import UIKit
 
 class MoreViewController: UITableViewController, UIAlertViewDelegate, MDLoginCallback {
     
+    @IBOutlet weak var emailLabel: UILabel!
     var alertView: UIAlertView!
     
     let hideLoginSections = [1, 3]
@@ -17,8 +18,12 @@ class MoreViewController: UITableViewController, UIAlertViewDelegate, MDLoginCal
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.clearsSelectionOnViewWillAppear = true
 
         MDLoginManager.loginCallbackList.append(self)
+        showEmail()
+//        tableView.reloadData()
     }
     
     
@@ -60,11 +65,13 @@ class MoreViewController: UITableViewController, UIAlertViewDelegate, MDLoginCal
             if !MDLoginManager.isLogin() {
                 return 0.1
             }
-        } else if hideLogoutSections.contains(section) {
-            if MDLoginManager.isLogin() {
-                return 0.1
-            }
         }
+        
+//        else if hideLogoutSections.contains(section) {
+//            if MDLoginManager.isLogin() {
+//                return 0.1
+//            }
+//        }
         return super.tableView(tableView, heightForHeaderInSection: section)
     }
     
@@ -84,11 +91,16 @@ class MoreViewController: UITableViewController, UIAlertViewDelegate, MDLoginCal
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let tag = tableView.cellForRowAtIndexPath(indexPath)!.tag
+        //tag 5 is log in/signup, tag 6 is rate & comment on appstore
+        
+        //if tag >= 1 &&
+        
         if tag == 1 {
             //show get more credits alert
             let title = "How to earn more Mickle Credits"
             let message = "1. If you log in for 7 consecutive days, you will get $2 Mickle Credits. \n\n 2. Add a valid payment method to get $5 Mickle Credits"
             showAlert(title, dismissTitle: "OK", actionTitle: nil, message: message, tag: tag, handler: nil)
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
         } else if tag == 2 {
             let title = "Are you sure you want to log out of \(MDLoginManager.userName == nil ? MDLoginManager.userEmail! : MDLoginManager.userName!) ?"
             showAlert(title, dismissTitle: "Cancel", actionTitle: "Yes", message: nil, tag: tag, handler: logoutAlertAction)
@@ -162,10 +174,20 @@ class MoreViewController: UITableViewController, UIAlertViewDelegate, MDLoginCal
 
     func onLoginSuccess() {
         tableView.reloadData()
+        showEmail()
     }
     
     func onLogOut() {
         tableView.reloadData()
+    }
+    
+    func showEmail() {
+        guard let emailText = MDLoginManager.userEmail else {
+            emailLabel.text = ""
+            return;
+        }
+        emailLabel.text = emailText
+        
     }
     
 }

@@ -1347,6 +1347,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="More" id="uqS-04-bVU"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="y5C-uI-mPm" id="L13-Cs-p4l"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sd1-sY-eTY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

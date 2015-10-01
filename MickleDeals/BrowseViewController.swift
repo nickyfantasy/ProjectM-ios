@@ -109,7 +109,7 @@ class BrowseViewController: UIViewController, UICollectionViewDelegateFlowLayout
         self.navigationController?.navigationBar.layer.shadowOffset = CGSizeMake(0, 0)
         
         if selectedIndexPath != nil {
-           collectionView.deselectItemAtIndexPath(selectedIndexPath!, animated: false)
+           collectionView.deselectItemAtIndexPath(selectedIndexPath!, animated: true)
         }
         NSLog("viewWillAppear")
     }
